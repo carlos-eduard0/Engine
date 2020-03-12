@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+.body-main{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: 110vh;
+}
+.navlink nav{
+   background-color: rgba(255, 255, 255, 0.493);
+   width: 250px;
+   height:100vh;
+   display: flex;
+   flex-direction: column;
+   padding: 20px 0;
+
+}
+.navlink nav h2{
+    color: #398DCB;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navlink nav ul{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.navlink nav ul li{
+    display: flex;
+    flex-direction: row;
+    color: #398DCB;
+}
+
+.navlink nav li span{
+    color: #7F7F7F;
+    margin-left: 10px;
+}
+.content{
+    background-color: rgb(25, 108, 202);
+    width: 100%;
+    height: 60vh;
+}
+.content-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content .header-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 85px;
+}
+.content .header-content h3{
+    font-size: 15px;
+    color: #ffff;
+}
+.content .header-content span{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #ffff;
+    font-size: 18px;
+    font-weight: 500;
+}
+.content .header-content span .iconU{
+    font-size: 38px;
+    color: #ffff;
+    margin: 0 8px;
+}
+.content-menu nav{
+    padding: 40px 0;
+}
+.content-menu nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.content-menu nav ul li{
+    background-color: #FEFEFE;
+    width: 210px;
+    height: 106px;
+    border-radius: 5px;
+    margin: 0 15px;
+}
+.content-menu nav ul li header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 25px;
+}
+.content-menu nav ul li header span{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 12px;
+    color: #BBC4CE;
+    font-family: 'Inter', sans-serif;
+}
+.content-menu nav ul li header h3{
+    font-size: 20px;
+    color: #32325D;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    margin-top: 6px;
+}
+.content-menu nav ul li header .iconD{
+  color: #FFD600;
+  font-size: 33px;
+}
+.content-menu nav ul li header .iconA{
+    color: #FB6340;
+    font-size: 33px;
+  }
+  .content-menu nav ul li header .iconM{
+    color: rgb(14, 109, 42);
+    font-size: 33px;
+  }
+  .content-menu nav ul li header .iconB{
+    color: rgb(93, 27, 216);
+    font-size: 33px;
+  }
+.content-menu nav ul li p{
+    font-weight: 500;
+    font-size: 14px;
+     color: #BBC4CE;
+    padding: 0 25px;
+    font-family: 'Inter', sans-serif;
+}
+.content-menu .main-info{
+    display: flex; 
+}
+.content-menu .main-info .table{
+    width: 604px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.content-menu .main-info .table header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-family: 'Inter', sans-serif;
+    color:#32325D;
+}
+
+.content-menu .main-info .table-info{
+    width: 300px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-left: 35px;
+}
+.table-box{
+    border-collapse: collapse;
+    font-size: 0.9em;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.table-box thead tr{
+   background-color:#F6F9FC;
+   color: #A6B3C1;
+   text-align: left;
+   font-family: 'Inter', sans-serif;
+}
+
+.table-box th{
+    padding: 12px 15px;
+    color: #A6B3C1;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+ }
+ .table-box td{
+    padding: 12px 15px;
+    color: #32325D;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+ }
+.table-box tbody tr{
+    border-bottom: 0.4px solid #dddddd;
+    cursor: pointer;
+ }
+
+@media (min-width:1800px){
+    .content{
+        height: 30vh;
+    }
+    .content-menu nav ul li{
+        width: 371.25px;
+        height: 122px;
+        margin: 0 15px;
+    }
+    .content-menu .main-info .table{
+        width: 1000px;
+        height: 500px;
+    }
+
+    .content-menu .main-info .table-info{
+        width: 540px;
+        height: 500px;
+    }
+    .content .header-content{
+        padding: 30px 50px;
+    }
+}
+
