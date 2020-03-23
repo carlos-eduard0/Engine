@@ -1,18 +1,31 @@
 import React from 'react';
-import Main from './components/main';
+import Main from './Screens/main';
+import AOS from 'aos';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import 'aos/dist/aos.css';
 import '../src/global.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Cadastro from './Screens/cadastro';
 
-function App() {
-  return (
-    <Router>
-      <div id="app">
-      </div>
-      <Switch>
-        <Route exact path='/' component={Main}/>
-      </Switch>
-    </Router>
-  )
-}
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  componentDidMount(){
+    AOS.init({
+     
+    })
+  }
+  render(){
+    return(
+      <Router>
+        <Switch>
+        <Route exact path='/' component={Main} />
+        <Route path='/cadastro' component={Cadastro} />
+        </Switch>
+      </Router>
+    )
+  }
+};
 
 export default App;

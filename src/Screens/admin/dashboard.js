@@ -4,11 +4,24 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import DashboardIcon from '@material-ui/icons/DashboardIcon';
+import SettingsIcon from '@material-ui/icons/SettingsIcon';
+import StarIcon from '@material-ui/icons/StarIcon';
 import './main.css'
 function Painel(){
     return(
        <div className="body-main">
             <main className="content">
+                  <div className="navlink">
+                    <nav>
+                        <h2>ENGINE</h2>
+                        <ul>
+                            <li><DashboardIcon></DashboardIcon><span>Dashboard</span></li>
+                            <li><SettingsIcon className="icon-service"></SettingsIcon><span>Meus Serviços</span></li>
+                            <li><StarIcon className="icon-star"></StarIcon><span>Avaliações</span></li>
+                        </ul>
+                    </nav>
+                </div>
                 <header className="header-content">
                     <h3>DASHBOARD</h3>
                     <span><AccountCircleIcon className="iconU"></AccountCircleIcon>Casa Do Amortecedor</span> 
