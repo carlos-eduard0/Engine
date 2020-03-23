@@ -13,7 +13,7 @@ function Content() {
                                 <li><a href="/#">Início</a></li>
                                 <li><a href="/#">Parceiros</a></li>
                                 <li><a href="/#">Sobre</a></li>
-                                <li id="button-login"><Link to={'/admin'}>Login</Link></li>
+                                <li id="button-login"><Link to={'/Dashboard'}>Login</Link></li>
                             </ul>
                         </nav>
                     </div>
@@ -22,7 +22,7 @@ function Content() {
                     <div className="text">
                         <h1>Mudando o conceito de oferecer serviços automotivos com um simples toque</h1>
                         <p>If you do not have enough experience on how to do a modern website, you can contact us. Let me show you how to make the latest technology startup sites using the Source.</p>
-                        <Link to={'/admin'}>Cadastrar minha empresa</Link>
+                        <Link to={'/'}>Cadastrar minha empresa</Link>
                     </div>
                 </div>
             </div>

@@ -1,23 +1,13 @@
 import React from 'react';
-import DashboardIcon from '@material-ui/icons/Dashboard';
 import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import './main.css';
-
-function Admin(){
+import './main.css'
+function Painel(){
     return(
        <div className="body-main">
-            <div className="navlink">
-                <nav>
-                    <h2>ENGINE</h2>
-                    <ul>
-                        <li><DashboardIcon></DashboardIcon><span>Dashboard</span></li>
-                    </ul>
-                </nav>
-            </div>
             <main className="content">
                 <header className="header-content">
                     <h3>DASHBOARD</h3>
@@ -52,40 +42,61 @@ function Admin(){
                                     <span>Renda Mensal<h3>20.000,00</h3></span>
                                     <AccountBalanceIcon className="iconB"></AccountBalanceIcon>
                                 </header>
-                            
+                                <p>Atualizado agora</p>
                             </li>
                         </ul>
                     </nav>
                     <div className="main-info">
                         <div className="table">
-                            <header>Pedidos</header>
-                        <table class="table-box">
+                            <header>Pedidos Pendentes</header>
+                        <table className="table-box">
                                 <thead>
                                     <tr>
                                         <th>Cliente</th>
                                         <th>Serviço</th>
-                                        <th>Situação</th>
                                         <th>Placa do carro</th>
+                                        <th>Valor</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Carlos Eduardo Mascarenhas</td>
                                         <td>Lavagem Completa</td>
-                                        <td>Pago</td>
                                         <td>H45DSE8</td>
+                                        <td>15,00 R$</td>
                                     </tr>
                                     <tr>
                                         <td>Fabiano</td>
                                         <td>Lavagem Completa</td>
-                                        <td>Pagar No Local</td>
                                         <td>SAD48SD</td>
+                                        <td>15,00 R$</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div className="table-info">
-
+                            <header>Pedidos Concluidos</header>
+                                  <table className="table-box">
+                                <thead>
+                                    <tr>
+                                        <th>Cod. Pedido</th>
+                                        <th>Situação</th>
+                                     
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>05114</td>
+                                        <td>Pago Pelo App</td>
+                                  
+                                    </tr>
+                                    <tr>
+                                        <td>05115</td>
+                                        <td>Pago no Local</td>
+                                       
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -93,4 +104,4 @@ function Admin(){
         </div>
     )
 }
-export default Admin;
+export default Painel;

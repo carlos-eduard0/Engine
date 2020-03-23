@@ -1,0 +1,36 @@
+.navlink nav{
+    background-color: rgba(255, 255, 255, 0.288);
+    width: 250px;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    position: fixed;
+ }
+ .navlink nav h2{
+     color: #398DCB;
+     font-size: 30px;
+     text-align: center;
+ }
+ .navlink nav ul{
+     margin-left: 20px;
+     margin-top: 20px;
+ }
+ .navlink nav ul li a{
+     display: flex;
+     flex-direction: row;
+     color: #398DCB;
+     cursor: pointer;
+    padding-top: 40px;
+    text-decoration: none;
+ }
+ .navlink nav ul li .icon-service{
+     color: #7F7F7F;
+ }
+ .navlink nav ul li .icon-star{
+     color: rgb(247, 166, 16);
+ }
+ .navlink nav li span{
+     color: #7F7F7F;
+     margin-left: 10px;
+ }
