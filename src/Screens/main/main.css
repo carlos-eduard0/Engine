@@ -169,9 +169,64 @@
     margin: 10px 0;
 }
 .main footer{
-    height: 500px;
+    height: 459px;
     background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
 }
+.main footer #direitos{
+    text-align: center;
+    font-size: 16px;
+    color: #A1A1A1;
+}
+
+.main footer .text-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 190px;
+  align-items: center;
+}
+.main footer .text-footer .text-colum{
+    display: flex;
+    flex-direction: column;
+  }
+  .main footer ul{
+    display: flex;
+    flex-direction: row;
+   
+  }
+  .main footer .text-footer .logoEngine img{
+    width: 280px;
+    height: auto;
+    padding-top: 80px;
+  }
+  .main footer ul{
+    display: flex;
+    flex-direction: row;
+   
+  }
+  .main footer ul li{
+    color: #A1A1A1;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    margin-right: 8px;
+   
+  }
+  .main footer   ul li .icon{
+    margin-right: 8px;
+  }
+  .main footer .text-footer .text-colum h2{
+    color: #373737;
+    font-size: 31px;
+  }
+  .main footer .text-footer .text-colum p{
+    text-align: left;
+    padding-top: 20px;
+    color: #A1A1A1;
+    width: 340px;
+  }
 @media (min-width:1800px){
     .main .content-main-itens h1{
         padding: 0 281px;
@@ -250,4 +305,11 @@
         flex-direction: row;
         margin: 0 200px;
     }
+    .main footer .text-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 480px;
+        align-items: center;
+      }
 }

@@ -4,7 +4,11 @@ import vetor from '../../img/vetor.png';
 import icone1 from '../../img/icone1.svg'
 import icone2 from '../../img/icone2.svg'
 import icone3 from '../../img/icone3.svg'
+import logoEngine from '../../img/logoEngine.png'
 import { Link } from 'react-router-dom';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 function Content() {
     return (
         <div className="main">
@@ -79,7 +83,23 @@ function Content() {
             </section>
 
             <footer>
+                <div className="text-footer">
+                    <div className="text-colum">
+                        <h2>ENGINE</h2>
+                        <p>Source is a great tool for creating modern web sites for your startups. If you need help to build your next react project.</p>
+                            <ul>
+                                <li><InstagramIcon className="icon"></InstagramIcon>Instagram</li>
+                                <li><FacebookIcon className="icon"></FacebookIcon>Facebook</li>
+                                <li><YouTubeIcon className="icon"></YouTubeIcon>YouTube</li>
+                            </ul>
+                    </div>
+                    <div className="logoEngine">
+                        <img src={logoEngine} alt=""/>
+                    </div>
+                </div>
 
+                    <p id="direitos">Todos os direitos reservados para ENGINE</p>
+           
             </footer>
         </div>
     );
