@@ -1,0 +1,910 @@
+.main{
+    overflow-y: hidden;
+}
+.main .content-main{
+    background: linear-gradient(152deg, rgba(95,194,204,1) 33%, rgba(27,98,203,1) 100%);
+    width: 100%;
+    height: 1000px;
+    max-height: 760px;
+}
+.main .content-main-itens{
+    padding: 75px 0;
+    width: 70%;
+    text-align: left;
+}
+
+.main .content-main-itens h1{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+    height: 210px;
+    padding: 0 110px;
+}
+.main .content-main-itens p{
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 68%;
+    height: 112px;
+    padding: 0 110px;
+}
+
+.main .content-main-itens a{
+    background: #fff;
+    padding: 14px 22px;
+    border-radius: 290486px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(60, 62, 65);
+    font-weight: 600;
+    margin-left: 105px;
+}
+
+
+.main .itens{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    margin: 0 113px;
+}
+.main h2{
+    color: #fff;
+    font-weight: 700;
+}
+.main #header-main nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.main #header-main  nav li{
+    margin: 0 30px;
+}
+
+.main #header-main  nav li a{
+    text-decoration: none;
+    color: #ffff;
+    
+}
+.main nav  #button-login{
+    border: solid 1px #ffff;
+    padding: 10px 22px;
+}
+.main .main-section{
+    margin: 80px 0;
+}
+.main .section-vetor{
+    display: flex;
+    flex-direction: row;
+    margin: 0 30px;
+}
+.main .section-vetor img{
+    width: 600px;
+    height: auto;
+}
+.main .section-vetor .texto-vetor{
+    padding: 0 94px;
+}
+.main .section-vetor h2{
+  color: #363636;
+  font-size: 38px;
+}
+.main .section-vetor h3{
+    color: #363636;
+    padding-top: 22px;
+}
+.main .section-vetor p{
+    color: #797979;
+    padding: 22px 0;
+    
+}
+.main .section-vetor .texto-vetor a{
+    border: 1px solid rgb(196, 196, 196);
+    padding: 14px 22px;
+    border-radius: 290486px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: #363636;
+}
+.main .section-vetor .texto-vetor .buttonV{
+    padding-top: 15px;
+}
+.main .container{
+    background: url('../../img/onda.svg')no-repeat;
+    background-size: cover;
+    height: 767px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main .container .text-container{
+    color: #ffff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    width: 400px;
+}
+.main .container .text-container h1{
+   font-size: 35px;
+}
+.main .container .text-container p{
+    padding-top: 20px;
+    line-height: 25px;
+ }
+
+.main .container .cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 0 40px;
+}
+.main .container .cards .card{
+    background-color: rgb(255, 255, 255);
+    width: 256px;
+    height: 380px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main .container .cards .card img{
+    width: 98px;
+    height: auto;
+    margin-top: 50px;
+}
+.main .container .cards .card .textCard{
+    text-align: center;
+    padding-top: 64px;
+    margin: 0 20px;
+    color: #4A4A4A;
+}
+.main .container .cards .card .textCard p{
+    margin: 10px 0;
+}
+.main footer{
+    height: 459px;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+}
+.main footer #direitos{
+    text-align: center;
+    font-size: 16px;
+    color: #A1A1A1;
+}
+
+.main footer .text-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 190px;
+  align-items: center;
+}
+.main footer .text-footer .text-colum{
+    display: flex;
+    flex-direction: column;
+  }
+  .main footer ul{
+    display: flex;
+    flex-direction: row;
+   
+  }
+  .main footer .text-footer .logoEngine img{
+    width: 280px;
+    height: auto;
+    padding-top: 80px;
+  }
+  .main footer ul{
+    display: flex;
+    flex-direction: row;
+   
+  }
+  .main footer ul li{
+    color: #A1A1A1;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    margin-right: 8px;
+   
+  }
+  .main footer   ul li .icon{
+    margin-right: 8px;
+  }
+  .main footer .text-footer .text-colum h2{
+    color: #373737;
+    font-size: 31px;
+  }
+  .main footer .text-footer .text-colum p{
+    text-align: left;
+    padding-top: 20px;
+    color: #A1A1A1;
+    width: 340px;
+  }
+@media (max-width: 330px) {
+    .main .content-main header{
+        display: none;
+    }
+    .main .content-main{
+        background: linear-gradient(152deg, rgba(95,194,204,1) 33%, rgba(27,98,203,1) 100%);
+        width: 100%;
+        height: 100vh;
+        max-height: 760px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main .content-main-itens{
+        padding: 55px 0;
+    }
+    
+    .main .content-main-itens h1{
+        color: #fff;
+        font-size: 30px;
+        font-weight: 600;
+        height: 0;
+        padding: 0 0px;
+        width: 100%;
+        text-align: left;
+    }
+    .main .content-main-itens p{
+        color: #fff;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.25;
+        width: 100%;
+        margin-top: 280px;
+        height: 120px;
+        padding: 0 0px;
+    }
+    
+    .main .content-main-itens a{
+        background: #fff;
+        padding: 12px 14px;
+        border-radius: 290486px;
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(60, 62, 65);
+        font-weight: 600;
+        margin-left: 0;
+    }
+    .main .main-section{
+        margin: 80px 0;
+    }
+    .main .section-vetor{
+        display: flex;
+        flex-direction: column;
+        margin: 0 30px;
+    }
+    .main .section-vetor h2{
+        font-size: 29px;
+    }
+    .main .section-vetor img{
+        width: 100%;
+        height: auto;
+    }
+    .main .section-vetor .texto-vetor{
+        padding: 45px 0px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    .main .container{
+        background-color: #2570CB;
+        background-size: cover;
+        height: 1600px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: inherit;
+        
+    }
+    .main .container .text-container{
+        color: #ffff;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 200px;
+        width: 100%;
+    }
+    .main .container .text-container h1{
+       font-size: 35px;
+       padding: 0 20px;
+    }
+    .main .container .text-container p{
+        line-height: 25px;
+        padding: 20px 20px;
+     }
+    
+    .main .container .cards{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+        padding: 0 40px;
+    }
+    .main .container .cards .card{
+        background-color: rgb(255, 255, 255);
+        width: 256px;
+        height: 350px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main .container .cards .card img{
+        width: 98px;
+        height: auto;
+        margin-top: 50px;
+    }
+    .main .container .cards .card .textCard{
+        text-align: center;
+        padding-top: 64px;
+        margin: 0 20px;
+        color: #4A4A4A;
+    }
+    .main .container .cards .card .textCard p{
+        margin: 10px 0;
+    }
+    .main footer{
+        height: 459px;
+        background-color: #F5F5F5;
+        display: flex;
+        flex-direction: column;
+    }
+    .main footer #direitos{
+        text-align: center;
+        font-size: 16px;
+        color: #A1A1A1;
+    }
+    
+    .main footer .text-footer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 100px 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .main footer .text-footer .text-colum{
+        display: flex;
+        flex-direction: column;
+
+      }
+      
+      .main footer ul{
+        display: flex;
+        flex-direction: row;
+       
+      }
+      .main footer .text-footer .logoEngine img{
+       display: none;
+      }
+      .main footer ul{
+        display: flex;
+        flex-direction: row;
+       
+      }
+      .main footer ul li{
+        color: #A1A1A1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 20px;
+        margin-right: 8px;
+       
+      }
+      .main footer   ul li .icon{
+        margin-right: 8px;
+      }
+      .main footer .text-footer .text-colum h2{
+        color: #373737;
+        font-size: 31px;
+      }
+      .main footer .text-footer .text-colum p{
+        text-align: justify;
+        padding: 20px 20px;
+        color: #A1A1A1;
+        font-size: 18px;
+        width: 300px;
+      }
+}
+@media (min-width:330px) and (max-width: 768.98px) {
+.main .content-main header{
+    display: none;
+}
+.main .content-main{
+    background: linear-gradient(152deg, rgba(95,194,204,1) 33%, rgba(27,98,203,1) 100%);
+    width: 100%;
+    height: 100%;
+    max-height: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main .content-main-itens{
+    padding: 55px 0;
+}
+
+.main .content-main-itens h1{
+    color: #fff;
+    font-size: 38px;
+    font-weight: 600;
+    height: 0;
+    padding: 0 0px;
+    width: 100%;
+    text-align: left;
+}
+.main .content-main-itens p{
+    color: #fff;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 100%;
+    margin-top: 360px;
+    height: 200px;
+    padding: 0 0px;
+}
+
+.main .content-main-itens a{
+    background: #fff;
+    padding: 14px 22px;
+    border-radius: 290486px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(60, 62, 65);
+    font-weight: 600;
+    margin-left: 0;
+}
+.main .main-section{
+    margin: 80px 0;
+}
+.main .section-vetor{
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+}
+.main .section-vetor img{
+    width: 100%;
+    height: auto;
+}
+.main .section-vetor .texto-vetor{
+    padding: 45px 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.main .container{
+    background-color: #2570CB;
+    background-size: cover;
+    height: 1500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: inherit;
+    
+}
+.main .container .text-container{
+    color: #ffff;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 200px;
+    width: 100%;
+}
+.main .container .text-container h1{
+   font-size: 35px;
+   padding: 0 20px;
+}
+.main .container .text-container p{
+    line-height: 25px;
+    padding: 20px 20px;
+ }
+
+.main .container .cards{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    padding: 0 40px;
+}
+.main .container .cards .card{
+    background-color: rgb(255, 255, 255);
+    width: 256px;
+    height: 350px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main .container .cards .card img{
+    width: 98px;
+    height: auto;
+    margin-top: 50px;
+}
+.main .container .cards .card .textCard{
+    text-align: center;
+    padding-top: 64px;
+    margin: 0 20px;
+    color: #4A4A4A;
+}
+.main .container .cards .card .textCard p{
+    margin: 10px 0;
+}
+.main footer{
+    height: 459px;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+}
+.main footer #direitos{
+    text-align: center;
+    font-size: 16px;
+    color: #A1A1A1;
+}
+
+.main footer .text-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 100px 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main footer .text-footer .text-colum{
+    display: flex;
+    flex-direction: column;
+  }
+  .main footer ul{
+    display: flex;
+    flex-direction: row;
+   
+  }
+  .main footer .text-footer .logoEngine img{
+   display: none;
+  }
+  .main footer ul{
+    display: flex;
+    flex-direction: row;
+   
+  }
+  .main footer ul li{
+    color: #A1A1A1;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    margin-right: 8px;
+   
+  }
+  .main footer   ul li .icon{
+    margin-right: 8px;
+  }
+  .main footer .text-footer .text-colum h2{
+    color: #373737;
+    font-size: 31px;
+  }
+  .main footer .text-footer .text-colum p{
+    text-align: left;
+    padding-top: 20px;
+    color: #A1A1A1;
+    width: 340px;
+  }
+}
+@media (min-width: 330px) and (max-width:768px) and (orientation: landscape) {
+    .main .content-main header{
+        display: none;
+    }
+    .main .content-main{
+        background: linear-gradient(152deg, rgba(95,194,204,1) 33%, rgba(27,98,203,1) 100%);
+        width: 100%;
+        height: 100%;
+        max-height: 760px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main .content-main-itens p{
+        color: #fff;
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 1.25;
+        width: 100%;
+        margin-top: 220px;
+        height: 140px;
+        padding: 0 0px;
+    }
+    
+    .main .content-main-itens a{
+        background: #fff;
+        padding: 14px 22px;
+        border-radius: 290486px;
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(60, 62, 65);
+        font-weight: 600;
+        margin-left: 0;
+    }
+
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .main .content-main header{
+        display: initial;
+    }
+    .main .content-main{
+        background: linear-gradient(152deg, rgba(95,194,204,1) 33%, rgba(27,98,203,1) 100%);
+        width: 100%;
+        height: 100vh;
+        max-height: 760px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main .content-main-itens{
+        padding: 90px 0;
+    }
+    
+    .main .content-main-itens h1{
+        color: #fff;
+        font-size: 38px;
+        font-weight: 600;
+        height: 0;
+        padding: 0 0px;
+        width: 100%;
+        text-align: left;
+    }
+    .main .content-main-itens p{
+        color: #fff;
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 1.25;
+        width: 100%;
+        margin-top: 160px;
+        height: 130px;
+        padding: 0 0px;
+    }
+    
+    .main .content-main-itens a{
+        background: #fff;
+        padding: 14px 22px;
+        border-radius: 290486px;
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(60, 62, 65);
+        font-weight: 600;
+        margin-left: 0;
+    }
+    .main .main-section{
+        margin: 80px 0;
+    }
+    .main .section-vetor{
+        display: flex;
+        flex-direction: column;
+        margin: 0 30px;
+    }
+    .main .section-vetor img{
+        width: 100%;
+        height: auto;
+    }
+    .main .section-vetor .texto-vetor{
+        padding: 45px 60px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    .main .container{
+        background-color: #2570CB;
+        background-size: cover;
+        height: 1500px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: inherit;
+        
+    }
+    .main .container .text-container{
+        color: #ffff;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 200px;
+        width: 100%;
+    }
+    .main .container .text-container h1{
+       font-size: 35px;
+       padding: 0 80px;
+    }
+    .main .container .text-container p{
+        line-height: 25px;
+        padding: 20px 80px;
+     }
+    
+    .main .container .cards{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 40px;
+        padding: 0 40px;
+    }
+    .main .container .cards .card{
+        background-color: rgb(255, 255, 255);
+        width: 356px;
+        height: 350px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main .container .cards .card img{
+        width: 98px;
+        height: auto;
+        margin-top: 50px;
+    }
+    .main .container .cards .card .textCard{
+        text-align: center;
+        padding-top: 64px;
+        margin: 0 20px;
+        color: #4A4A4A;
+    }
+    .main .container .cards .card .textCard p{
+        margin: 10px 0;
+    }
+    .main footer{
+        height: 459px;
+        background-color: #F5F5F5;
+        display: flex;
+        flex-direction: column;
+    }
+    .main footer #direitos{
+        text-align: center;
+        font-size: 16px;
+        color: #A1A1A1;
+    }
+    
+    .main footer .text-footer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 100px 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .main footer .text-footer .text-colum{
+        display: flex;
+        flex-direction: column;
+      }
+      .main footer ul{
+        display: flex;
+        flex-direction: row;
+       
+      }
+      .main footer .text-footer .logoEngine img{
+       display: none;
+      }
+      .main footer ul{
+        display: flex;
+        flex-direction: row;
+       
+      }
+      .main footer ul li{
+        color: #A1A1A1;
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        margin-right: 8px;
+       
+      }
+      .main footer   ul li .icon{
+        margin-right: 8px;
+      }
+      .main footer .text-footer .text-colum h2{
+        color: #373737;
+        font-size: 31px;
+      }
+      .main footer .text-footer .text-colum p{
+        text-align: left;
+        padding-top: 20px;
+        color: #A1A1A1;
+        width: 340px;
+      }
+}
+@media (min-width: 768px) and (max-width: 991.98px) and (orientation: landscape) {
+    .main .content-main header{
+        display: initial;
+    }
+    .main .content-main{
+        background: linear-gradient(152deg, rgba(95,194,204,1) 33%, rgba(27,98,203,1) 100%);
+        width: 100%;
+        height: 100%;
+        max-height: 760px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+@media (min-width:1800px){
+    .main .content-main-itens h1{
+        padding: 0 281px;
+    }
+    .main .content-main-itens p{
+        padding: 0 281px;
+    }
+    .main .content-main-itens a{
+        margin-left: 272px;
+    }
+    .main .itens{
+        margin: 0 281px;
+    }
+    .main .container{
+        background: url('../../img/ondaM.svg')no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 650px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .main .container .cards .card{
+        background-color: rgb(255, 255, 255);
+        width: 380px;
+        height: 380px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main .container .cards .card img{
+        width: 98px;
+        height: auto;
+        margin-top: 70px;
+    }
+    .main .container .cards .card .textCard{
+        text-align: center;
+        padding-top: 44px;
+        margin: 0 20px;
+        color: #4A4A4A;
+    }
+    .main .container .text-container{
+        color: #ffff;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .main .container .text-container h1{
+        font-size: 38px;
+     }
+     .main .container .cards{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+        padding: 0 40px;
+    }
+    .main .section-vetor .texto-vetor{
+        padding-top: 20px;
+        margin: 0 70px;
+    }
+    .main .section-vetor h2{
+      color: #363636;
+      font-size: 38px;
+    }
+    .main .section-vetor h3{
+        color: #363636;
+        padding-top: 22px;
+    }
+    .main .section-vetor p{
+        color: #797979;
+        padding: 22px 0;
+    }
+    .main .section-vetor{
+        display: flex;
+        flex-direction: row;
+        margin: 0 200px;
+    }
+    .main footer .text-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 480px;
+        align-items: center;
+      }
+}

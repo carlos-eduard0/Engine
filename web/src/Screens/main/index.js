@@ -5,7 +5,7 @@ import icone1 from '../../img/icone1.svg'
 import icone2 from '../../img/icone2.svg'
 import icone3 from '../../img/icone3.svg'
 import logoEngine from '../../img/logoEngine.png'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
@@ -30,7 +30,7 @@ function Content() {
                     <div className="text">
                         <h1 data-aos='fade-down' >Mudando o conceito de oferecer serviços automotivos com um simples toque</h1>
                         <p data-aos='fade-down' data-aos-delay="100">If you do not have enough experience on how to do a modern website, you can contact us. Let me show you how to make the latest technology startup sites using the Source.</p>
-                        <Link to={'/cadastro'} data-aos='fade-down' data-aos-delay="200">Cadastrar minha empresa</Link>
+                        <NavLink to={'/cadastro'} data-aos='fade-down' data-aos-delay="200">Cadastrar minha empresa</NavLink>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@ function Content() {
                         <h3 data-aos='fade-left' data-aos-delay="200">Adicione os seus serviços no dashboard que o resto a Engine cuida pra você.</h3>
                         <p data-aos='fade-left' data-aos-delay="300">Com a Engine você consegue promover ainda mais seus serviços automotivos, com um sistema simples e de fácil uso a gente torna o atendimento entre você e o cliente ainda mais próximo.</p>
                         <div className="buttonV">
-                            <Link to={'/cadastro'} data-aos='fade-left' data-aos-delay="400">Cadastrar minha empresa</Link>
+                            <NavLink to={'/cadastro'} data-aos='fade-left' data-aos-delay="400">Cadastrar minha empresa</NavLink>
                         </div>
                     </div>
                 </div>
@@ -97,9 +97,7 @@ function Content() {
                         <img src={logoEngine} alt=""/>
                     </div>
                 </div>
-
-                    <p id="direitos">Todos os direitos reservados para ENGINE</p>
-           
+                <p id="direitos">Todos os direitos reservados para ENGINE</p>
             </footer>
         </div>
     );
