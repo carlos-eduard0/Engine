@@ -225,14 +225,16 @@
     width: 340px;
   }
 @media (max-width: 330px) {
+    .main{
+        overflow-y: hidden;
+    }
     .main .content-main header{
         display: none;
     }
     .main .content-main{
         background: linear-gradient(152deg, rgba(95,194,204,1) 33%, rgba(27,98,203,1) 100%);
         width: 100%;
-        height: 100vh;
-        max-height: 760px;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -244,11 +246,9 @@
     .main .content-main-itens h1{
         color: #fff;
         font-size: 30px;
-        font-weight: 600;
         height: 0;
         padding: 0 0px;
         width: 100%;
-        text-align: left;
     }
     .main .content-main-itens p{
         color: #fff;
@@ -412,6 +412,9 @@
       }
 }
 @media (min-width:330px) and (max-width: 768.98px) {
+    .main{
+        overflow-y: hidden;
+    }
 .main .content-main header{
     display: none;
 }
@@ -423,6 +426,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: hidden;
 }
 .main .content-main-itens{
     padding: 55px 0;
@@ -443,8 +447,8 @@
     font-weight: 400;
     line-height: 1.25;
     width: 100%;
-    margin-top: 360px;
-    height: 200px;
+    margin-top: 330px;
+    height: 210px;
     padding: 0 0px;
 }
 
@@ -460,11 +464,13 @@
 }
 .main .main-section{
     margin: 80px 0;
+    overflow-y: hidden;
 }
 .main .section-vetor{
     display: flex;
     flex-direction: column;
     margin: 0 30px;
+    overflow-y: hidden;
 }
 .main .section-vetor img{
     width: 100%;
@@ -484,6 +490,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: inherit;
+    overflow-y: hidden;
     
 }
 .main .container .text-container{
@@ -492,14 +499,17 @@
     flex-direction: column;
     padding: 80px 200px;
     width: 100%;
+    overflow-y: hidden;
 }
 .main .container .text-container h1{
    font-size: 35px;
    padding: 0 20px;
+   overflow-y: hidden;
 }
 .main .container .text-container p{
     line-height: 25px;
     padding: 20px 20px;
+    overflow-y: hidden;
  }
 
 .main .container .cards{
@@ -507,6 +517,8 @@
     grid-template-columns: repeat(1,1fr);
     gap: 20px;
     padding: 0 40px;
+    overflow-y: hidden;
+ 
 }
 .main .container .cards .card{
     background-color: rgb(255, 255, 255);
@@ -516,20 +528,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: hidden;
 }
 .main .container .cards .card img{
     width: 98px;
     height: auto;
     margin-top: 50px;
+    overflow-y: hidden;
 }
 .main .container .cards .card .textCard{
     text-align: center;
     padding-top: 64px;
     margin: 0 20px;
     color: #4A4A4A;
+    overflow-y: hidden;
 }
 .main .container .cards .card .textCard p{
     margin: 10px 0;
+    overflow-y: hidden;
 }
 .main footer{
     height: 459px;
@@ -592,6 +608,9 @@
   }
 }
 @media (min-width: 330px) and (max-width:768px) and (orientation: landscape) {
+    .main{
+        overflow-y: hidden;
+    }
     .main .content-main header{
         display: none;
     }
@@ -628,6 +647,9 @@
 
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
+    .main{
+        overflow-y: hidden;
+    }
     .main .content-main header{
         display: initial;
     }
@@ -639,6 +661,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow-y: hidden;
     }
     .main .content-main-itens{
         padding: 90px 0;
@@ -676,6 +699,7 @@
     }
     .main .main-section{
         margin: 80px 0;
+        overflow-y: hidden;
     }
     .main .section-vetor{
         display: flex;
@@ -700,6 +724,7 @@
         align-items: center;
         flex-direction: column;
         justify-content: inherit;
+        overflow-y: hidden;
         
     }
     .main .container .text-container{
@@ -723,6 +748,7 @@
         grid-template-columns: repeat(1,1fr);
         gap: 40px;
         padding: 0 40px;
+        overflow-y: hidden;
     }
     .main .container .cards .card{
         background-color: rgb(255, 255, 255);
@@ -808,6 +834,9 @@
       }
 }
 @media (min-width: 768px) and (max-width: 991.98px) and (orientation: landscape) {
+    .main{
+        overflow-y: hidden;
+    }
     .main .content-main header{
         display: initial;
     }
@@ -819,6 +848,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow-y: hidden;
     }
 
 }
