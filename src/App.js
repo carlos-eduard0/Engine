@@ -10,9 +10,7 @@ import Cadastro from './Screens/cadastro';
 
 class App extends React.Component {
   componentDidMount(){
-    AOS.init({
-     
-    })
+    AOS.init()
   }
   render(){
     return(
