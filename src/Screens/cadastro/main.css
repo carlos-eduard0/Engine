@@ -69,7 +69,6 @@ aside form .input-block input{
     color: #666;
     border: 0;
     border-bottom: 1px solid #eee;
-    text-transform: capitalize;
 }
 
 .cadastro .cadastroForm aside form button[type=submit]{
