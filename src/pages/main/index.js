@@ -9,6 +9,7 @@ import { NavLink } from 'react-router-dom';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+
 function Content() {
     return (
         <div className="main">

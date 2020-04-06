@@ -1,0 +1,44 @@
+.body-cadastro {
+   
+    background-color: #f0f0f5;
+}
+.body-cadastro .main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+}
+.body-cadastro .main .render{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.body-cadastro .main .color{
+    width: 70%;
+    height: 100vh;
+    background: linear-gradient(125deg, rgba(27,98,203,1) 100%, rgba(95,194,204,1) 33% );
+}
+.body-cadastro .main .color .imagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.body-cadastro .main .color header{
+    margin: 0 10px;
+}
+.body-cadastro .main .color header nav ul{
+    display: flex;
+    margin-top: 25px;
+}
+.body-cadastro .main .color header nav li{
+    color: #ffff;
+    margin:  0 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.body-cadastro .color header nav li #icon{
+    margin-right: 8px;
+}
