@@ -14,7 +14,7 @@ export class Cadastro extends Component {
         step: 1,
 
         // step 1
-        nome_dono: '',
+        nome: '',
         nome_empresa: '',
         email: '',
         telefone: '',
@@ -45,9 +45,11 @@ export class Cadastro extends Component {
         confirmar_senha: '',
     }
     addempresa = async () =>{
-        const { nome_dono, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, end, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
+        const { nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, endereco, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
         const res = await api.post('/empresa',{
-            nome_dono,
+            nome,
+            senha,
+            confirmar_senha,
             nome_empresa,
             email,
             telefone,
@@ -59,15 +61,13 @@ export class Cadastro extends Component {
             cidade,
             uf,
             bairro,
-            end,
+            endereco,
             numero,
             complemento,
             nome_banco,
             agencia,
             conta,
-            digito,
-            senha,
-            confirmar_senha
+            digito
         })
         console.log(res.data)
     }
@@ -88,13 +88,13 @@ export class Cadastro extends Component {
         this.setState({ [input]: e.target.value });
     }
     showStep = () => {
-        const { step, nome_dono, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, end, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
+        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, endereco, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
 
         if (step === 1)
             return (<Step1
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
-                nome_dono={nome_dono}
+                nome_dono={nome}
                 nome_empresa={nome_empresa}
                 email={email}
                 telefone={telefone}
@@ -120,7 +120,7 @@ export class Cadastro extends Component {
                 cidade={cidade}
                 uf={uf}
                 bairro={bairro}
-                end={end}
+                endereco={endereco}
                 numero={numero}
                 complemento={complemento}
             />);

@@ -11,7 +11,7 @@ class Step3 extends Component {
         this.props.prevStep();
     }
     render() {
-        const { cep, cidade, uf, bairro, end, numero, complemento, handleChange } = this.props;
+        const { cep, cidade, uf, bairro, endereco, numero, complemento, handleChange } = this.props;
         return (
             <div className="form">
                 <strong>Endereço da Empresa</strong>
@@ -54,12 +54,12 @@ class Step3 extends Component {
                         required
                     />
                     <div className="input-group">
-                        <label htmlFor="end">Endereço</label>
+                        <label htmlFor="endereco">Endereço</label>
                         <input
                             type="text"
-                            name="end"
-                            value={end}
-                            onChange={handleChange('end')}
+                            name="endereco"
+                            value={endereco}
+                            onChange={handleChange('endereco')}
                             required
                         />
                         <label htmlFor="numero" id="input-lado">Número</label>
