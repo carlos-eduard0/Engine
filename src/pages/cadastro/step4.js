@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 class Step4 extends Component {
     continue = e => {
         e.preventDefault();
@@ -10,14 +9,14 @@ class Step4 extends Component {
         e.preventDefault();
         this.props.prevStep();
     }
-
+   
     render() {
         const { nome_banco, agencia, conta, digito, handleChange } = this.props;
         return (
             <div className="form">
                 <strong>Dados Bancários</strong>
                 <form action="submit" onSubmit={this.continue}>
-                    <label htmlFor="nome_banco">Banco</label>
+                    <label htmlFor="nome_banco">Nome do Banco</label>
                     <input
                         type="text"
                         name="nome_banco"

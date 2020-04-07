@@ -1,9 +1,47 @@
 import React, { Component } from 'react';
+import { isCNPJ, isCPF, formatToCNPJ, formatToCPF } from 'brazilian-values';
+import Swal from 'sweetalert2'
 import './form.css'
 class Step2 extends Component {
     continue = e => {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            onOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
         e.preventDefault();
-        this.props.nextStep();
+        const { cnpj, cpf } = this.props
+
+         if(!isCPF(cpf) && !isCNPJ(cnpj)){
+            Toast.fire({
+                icon: 'error',
+                title: 'CPF e CNPJ inválidos'
+            })
+        }
+         else if (!isCPF(cpf)) {
+            Toast.fire({
+                icon: 'error',
+                title: 'CPF Inválido'
+            })
+        }
+
+        else if (!isCNPJ(cnpj)) {
+            Toast.fire({
+                icon: 'error',
+                title: 'CNPJ Inválido'
+            })
+        }
+        
+        
+        else if (isCPF(cpf) && isCNPJ(cnpj)) {
+            this.props.nextStep();
+        }
     }
 
     back = e => {
@@ -20,7 +58,7 @@ class Step2 extends Component {
                     <input
                         type="text"
                         name="cpf"
-                        value={cpf}
+                        value={formatToCPF(cpf)}
                         onChange={handleChange('cpf')}
                         required
                     />
@@ -28,7 +66,7 @@ class Step2 extends Component {
                     <input
                         type="text"
                         name="cnpj"
-                        value={cnpj}
+                        value={formatToCNPJ(cnpj)}
                         onChange={handleChange('cnpj')}
                         required
                     />

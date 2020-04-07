@@ -42,3 +42,16 @@
 .body-cadastro .color header nav li #icon{
     margin-right: 8px;
 }
+@media (max-width: 768px) {
+    .body-cadastro .main{
+        flex-direction: column;
+    }
+    .body-cadastro .main .color{
+        width: 100%;
+        height: 70vh;
+    }
+    .body-cadastro .main .color .imagem img{
+        width: 250px;
+        height: auto;
+    }
+}

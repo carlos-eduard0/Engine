@@ -8,7 +8,9 @@ import Step5 from './step5';
 import logo from '../../img/logo.png';
 import HomeIcon from '@material-ui/icons/Home';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
+import Swal from 'sweetalert2'
 export class Cadastro extends Component {
     state = {
         step: 1,
@@ -30,7 +32,7 @@ export class Cadastro extends Component {
         cidade: '',
         uf: '',
         bairro: '',
-        end: '',
+        endereco: '',
         numero: '',
         complemento: '',
 
@@ -44,9 +46,20 @@ export class Cadastro extends Component {
         senha: '',
         confirmar_senha: '',
     }
-    addempresa = async () =>{
+    addempresa = async () => {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            onOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
         const { nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, endereco, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
-        const res = await api.post('/empresa',{
+        const res = await api.post('/empresa', {
             nome,
             senha,
             confirmar_senha,
@@ -69,7 +82,26 @@ export class Cadastro extends Component {
             conta,
             digito
         })
-        console.log(res.data)
+        console.log(res.data);
+        try {
+            if (res.data) {
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Empresa cadastrada com sucesso!'
+                })
+            }
+            if (res.data.message === 'senhas não conferem') {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Verifique suas senhas novamente, elas não batem!'
+                })
+            }
+        } catch (error) {
+            Toast.fire({
+                icon: 'error',
+                title: 'Erro nosso, tente atualizar a página'
+            })
+        }
     }
     nextStep = () => {
         const { step } = this.state;
@@ -94,7 +126,7 @@ export class Cadastro extends Component {
             return (<Step1
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
-                nome_dono={nome}
+                nome={nome}
                 nome_empresa={nome_empresa}
                 email={email}
                 telefone={telefone}
@@ -155,8 +187,8 @@ export class Cadastro extends Component {
                         <header>
                             <nav>
                                 <ul>
-                                    <li><HomeIcon id="icon"></HomeIcon>Home</li>
-                                    <li><VpnKeyIcon id="icon"></VpnKeyIcon>login</li>
+                                    <Link to={'/'}><li> <HomeIcon id="icon"></HomeIcon>Home</li></Link>
+                                    <Link><li><VpnKeyIcon id="icon"></VpnKeyIcon>login</li></Link>
                                 </ul>
                             </nav>
                         </header>

@@ -5,6 +5,10 @@ class Step5 extends Component {
         e.preventDefault();
         this.props.addempresa();
     }
+    back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+    }
     render() {
         const { senha, confirmar_senha, handleChange } = this.props;
         return (
@@ -27,8 +31,10 @@ class Step5 extends Component {
                         required
                         onChange={handleChange('confirmar_senha')}
                     />
-                    <button id="prev" onClick={this.back}>voltar</button>
-                    <button type="submit" id="next">Próximo</button>
+                    <div className="button-group">
+                        <button id="prev" onClick={this.back}>voltar</button>
+                        <button type="submit" id="next">Próximo</button>
+                    </div>
                 </form>
             </div>
         );

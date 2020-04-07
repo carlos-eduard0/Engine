@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
-
+import { formatToCEP, isCEP } from 'brazilian-values';
+import Swal from 'sweetalert2'
 class Step3 extends Component {
     continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            onOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+        const { cep } = this.props
+
+        if (!isCEP(cep)) {
+            Toast.fire({
+                icon: 'error',
+                title: 'CEP Inválido'
+            })
+        }
+        else if (isCEP(cep)){
+            this.props.nextStep();
+        }
     }
 
     back = e => {
@@ -20,7 +42,7 @@ class Step3 extends Component {
                     <input
                         type="text"
                         name="cep"
-                        value={cep}
+                        value={formatToCEP(cep)}
                         onChange={handleChange('cep')}
                         required
 

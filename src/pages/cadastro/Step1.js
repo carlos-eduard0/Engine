@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { formatToPhone} from 'brazilian-values';
 import './form.css'
 class Step1 extends Component {
     continue = e => {
@@ -39,7 +40,7 @@ class Step1 extends Component {
                     <input
                         type="text"
                         name="telefone"
-                        value={telefone}
+                        value={formatToPhone(telefone)}
                         required
                         onChange={handleChange('telefone')}
                     />
