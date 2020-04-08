@@ -7,41 +7,52 @@
     overflow-x: hidden;
 }
 .body-painel .main-painel{
-    width: 260px;
-   background-color: #ffffffd2;
+    width: 240px;
+   background-color: #353535;
    height: 100%;
    position: fixed;
 }
 
 .body-painel .main-painel nav{
-    margin: 40px 10px;
+    width: 100%;
+    margin-right: 70px;
 }
-.body-painel .main-painel h2{
-   text-align: center;
+.body-painel .main-painel .logo-painel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body-painel .main-painel img{
    padding-top: 20px;
-   color: #196CCA;
-   font-size: 28px;
-   font-weight: 700;
+   width: 100px;
+   height: auto;
 }
-.body-painel .main-painel nav ul li .nav-link{
+.body-painel .main-painel nav ul li a{
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    color: rgb(128, 128, 128);
+    width: 100%;
+    color: rgb(255, 255, 255);
+    padding: 14px 0;
     font-size: 17px;
     cursor: pointer;
+   
+}
+
+.body-painel .main-painel nav ul .active {
+  background-color: rgb(68, 68, 68);
+  transition: transform 0.5s 0s ease-in-out;
+  transform: translateY(3px);
 }
 .body-painel .main-painel nav ul li .icon{
   margin: 0 10px;
 }
 .body-painel .main-painel nav ul li .icon.serv{
-  color: rgb(59, 66, 75);
+  color: rgb(194, 194, 194);
 }
 .body-painel .main-painel nav ul li .icon.star{
-  color: rgb(248, 178, 47);
+  color: rgb(255, 191, 15);
 }
 .body-painel .main-painel nav ul li .icon.dash{
-    color: #196CCA;
+    color: #2B8FCD;
 }

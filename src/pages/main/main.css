@@ -8,7 +8,7 @@
     max-height: 760px;
 }
 .main .content-main-itens{
-    padding: 75px 0;
+    padding: 70px 0;
     width: 70%;
     text-align: left;
 }
@@ -49,8 +49,7 @@
     margin: 0 113px;
 }
 .main h2{
-    color: #fff;
-    font-weight: 700;
+    color: #ffff;
 }
 .main #header-main nav ul{
     display: flex;
@@ -78,6 +77,7 @@
 .main .section-vetor{
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin: 0 30px;
 }
 .main .section-vetor img{

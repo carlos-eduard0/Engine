@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+.body-main{
+    height: 100vh;
+    width: 100%;
+}
+.content-service{
+    background-size: 200% 100% !important;
+    animation: move 12s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(45deg,  rgba(27,98,203,1) 10%, rgb(48, 156, 206) 90%);
+    height: 80px;
+    margin-left: 240px;
+}
+@keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    50% {
+        background-position: 100% 0
+    }
+
+    100% {
+        background-position: 0 0
+    }
+}
+
+.content-service  .header-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 90px;
+    align-items: center;
+}
+.content-service  .header-content h3{
+    font-size: 15px;
+    color: #ffff;
+}
+.content-service  .header-content span{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #ffff;
+    font-size: 18px;
+    font-weight: 500;
+}
+.content-service  .header-content span .iconU{
+    font-size: 38px;
+    color: #ffff;
+    margin: 0 8px;
+}
+.content-service .link{
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 210px;
+    padding: 15px 15px;
+    border-radius: 5px;
+}
+.content-service a{
+    display: flex;
+    align-items: center;
+    color: rgb(15, 106, 209);
+}
+.content-service .iconNew{
+    margin-right: 8px;
+}
+.services{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.services .services-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+.services .item-sevice{
+    background-color: #ffff;
+    width: 230px;
+    height: 180px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+.services .item-sevice .cont-service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.services .item-sevice .cont-service header p{
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 10px;
+    color: rgb(153, 153, 153);
+}
+.services .item-sevice .cont-service main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.services .item-sevice .cont-service main .icon-service-cont{
+    font-size: 50px;
+    color: rgb(80, 80, 80);
+}
+.services .item-sevice .cont-service footer{
+    display: flex;
+    color: #fff;
+    background-color: rgb(57, 179, 87);
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+@media (min-width:1800px){
+    .services .services-grid{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 33px;
+        margin-bottom: 50px;
+    }
+}

@@ -28,8 +28,8 @@ function Content() {
                 </header>
                 <div className="content-main-itens">
                     <div className="text">
-                        <h1 data-aos='fade-down' >Mudando o conceito de oferecer serviços automotivos com um simples toque</h1>
-                        <p data-aos='fade-down' data-aos-delay="100">If you do not have enough experience on how to do a modern website, you can contact us. Let me show you how to make the latest technology startup sites using the Source.</p>
+                        <h1 data-aos='fade-down'>Você trabalha com carros e quer crescer seu fluxo de clientes e sua fatura mensal?</h1>
+                        <p data-aos='fade-down' data-aos-delay="100">Aproveite os beneficios da Engine e veja seu negócio girar como um motor, aumente suas vendas e apareça para seus clientes de forma simples e intuitiva!</p>
                         <Link to={'/cadastro'} data-aos='fade-down' data-aos-delay="200">Cadastrar minha empresa</Link>
                     </div>
                 </div>
@@ -42,7 +42,7 @@ function Content() {
                     <div className="texto-vetor">
                         <h2 data-aos='fade-left' data-aos-delay="100">Alcance ainda mais pessoas para sua empresa</h2>
                         <h3 data-aos='fade-left' data-aos-delay="200">Adicione os seus serviços no dashboard que o resto a Engine cuida pra você.</h3>
-                        <p data-aos='fade-left' data-aos-delay="300">Com a Engine você consegue promover ainda mais seus serviços automotivos, com um sistema simples e de fácil uso a gente torna o atendimento entre você e o cliente ainda mais próximo.</p>
+                        <p data-aos='fade-left' data-aos-delay="300">Muitas vezes clientes deixam de frequentar a sua empresa para conserto ou estética porque não a conhecem, a Engine torna sua empresa visível aos possíveis clientes, dando a você a chance de crescer e se tornar lucrativo, de forma segura, eficáz e totalmente revolucionário.</p>
                         <div className="buttonV">
                             <Link to={'/cadastro'} data-aos='fade-left' data-aos-delay="400">Cadastrar minha empresa</Link>
                         </div>

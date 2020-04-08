@@ -1,0 +1,49 @@
+.body-main{
+    height: 100vh;
+    width: 100%;
+}
+.content-star{
+    background-size: 200% 100% !important;
+    animation: move 12s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(45deg,  rgba(27,98,203,1) 10%, rgb(48, 156, 206) 90%);
+    height: 80px;
+    margin-left: 240px;
+}
+@keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    50% {
+        background-position: 100% 0
+    }
+
+    100% {
+        background-position: 0 0
+    }
+}
+.content-star  .header-star{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 90px;
+    align-items: center;
+}
+.content-star  .header-star h3{
+    font-size: 15px;
+    color: #ffff;
+}
+.content-star  .header-star span{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #ffff;
+    font-size: 18px;
+    font-weight: 500;
+}
+.content-star  .header-star span .iconU{
+    font-size: 38px;
+    color: #ffff;
+    margin: 0 8px;
+}
