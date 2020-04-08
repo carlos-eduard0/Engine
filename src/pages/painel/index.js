@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Dashboard from '../dashboard';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -18,16 +18,16 @@ function Painel() {
                     </div>
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
                         <ul className="navbar-nav mr-auto">
-                            <li><NavLink to={'/painel'}><DashboardIcon className="icon dash"></DashboardIcon>Dashboard</NavLink></li>
-                            <li><NavLink to={'/service'}><SettingsIcon className="icon serv"></SettingsIcon>Meus Serviços</NavLink></li>
-                            <li><NavLink to={'/star'}><StarIcon className="icon star"></StarIcon>Avaliações</NavLink></li>
+                            <li><Link to={'/painel'}><DashboardIcon className="icon dash"></DashboardIcon>Dashboard</Link></li>
+                            <li><Link to={'/painel/service'}><SettingsIcon className="icon serv"></SettingsIcon>Meus Serviços</Link></li>
+                            <li><Link to={'/painel/star'}><StarIcon className="icon star"></StarIcon>Avaliações</Link></li>
                         </ul>
                     </nav>
                 </div>
                 <Switch>
                     <Route exact path='/painel' component={Dashboard} />
-                    <Route path='/service' component={Service} />
-                    <Route path='/star' component={Star} />
+                    <Route path='/painel/service' component={Service} />
+                    <Route path='/painel/star' component={Star} />
                 </Switch>
             </div>
         </Router>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './main.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-function Service() {
+function Star() {
     return (
         <div className="body-main">
             <main className="content-star">
@@ -13,4 +13,4 @@ function Service() {
         </div>
     )
 }
-export default Service;
+export default Star;
