@@ -23,7 +23,7 @@ class Step3 extends Component {
                 title: 'CEP Inválido'
             })
         }
-        else if (isCEP(cep)){
+        else if (isCEP(cep)) {
             this.props.nextStep();
         }
     }

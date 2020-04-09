@@ -188,12 +188,12 @@ export class Cadastro extends Component {
                             <nav>
                                 <ul>
                                     <Link to={'/'}><li> <HomeIcon id="icon"></HomeIcon>Home</li></Link>
-                                    <Link><li><VpnKeyIcon id="icon"></VpnKeyIcon>login</li></Link>
+                                    <Link to={'/login'}><li><VpnKeyIcon id="icon"></VpnKeyIcon>login</li></Link>
                                 </ul>
                             </nav>
                         </header>
                         <div className="imagem">
-                            <img src={logo} alt="logo_engine" />
+                            <Link to={'/'}><img src={logo} alt="logo_engine" /></Link>
                         </div>
                     </div>
                     <div className="render">

@@ -6,7 +6,7 @@ function Login() {
     return (
         <div className="body-login">
             <div className="flex-login">
-                <img src={logobranca} alt="" />
+                <Link to={'/'}><img src={logobranca} alt="" /></Link>
                 <div className="form-login">
                     <form>
                         <strong>Login</strong>

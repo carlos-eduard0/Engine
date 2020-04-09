@@ -97,3 +97,21 @@
         background-position: 0 0
     }
 }
+@media (max-width: 330px) {
+    .form-login{
+        width: 38vh;
+    }
+    .footer-text{
+        width: 43.1vh;
+    ;
+    }
+}
+@media (min-width:330px) and (max-width: 768.98px) {
+    .form-login{
+        width: 38vh;
+    }
+    .footer-text{
+        width: 43.1vh;
+    ;
+    }
+}

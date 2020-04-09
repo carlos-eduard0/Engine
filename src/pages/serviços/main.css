@@ -109,10 +109,9 @@
 }
 .services .item-sevice .cont-service footer{
     display: flex;
-    color: #fff;
-    background-color: rgb(57, 179, 87);
+    color: rgb(201, 201, 201);
+    background-color: rgb(146, 146, 146);
     width: 100%;
-    font-family: 'Raleway', sans-serif;
 }
 @media (min-width:1800px){
     .services .services-grid{
