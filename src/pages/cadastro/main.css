@@ -17,7 +17,10 @@
 .body-cadastro .main .color{
     width: 70%;
     height: 100vh;
-    background: linear-gradient(125deg, rgba(27,98,203,1) 100%, rgba(95,194,204,1) 33% );
+    background-size: 200% 100% !important;
+    animation: move 10s ease-in-out infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(125deg,  rgba(27,98,203,1) 10%, rgb(48, 156, 206) 90%);
 }
 .body-cadastro .main .color .imagem{
     display: flex;

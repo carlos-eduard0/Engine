@@ -5,7 +5,7 @@ import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './step4';
 import Step5 from './step5';
-import logo from '../../img/logo.png';
+import logo from '../../img/logoEngine.png'
 import HomeIcon from '@material-ui/icons/Home';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { Link } from 'react-router-dom';

@@ -2,7 +2,10 @@
     overflow-y: hidden;
 }
 .main .content-main{
-    background: linear-gradient(152deg, rgba(95,194,204,1) 33%, rgba(27,98,203,1) 100%);
+    background-size: 200% 100% !important;
+    animation: move 12s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(152deg,  rgba(27,98,203,1) 10%, rgb(48, 156, 206) 90%);
     width: 100%;
     height: 1000px;
     max-height: 760px;
@@ -113,12 +116,27 @@
     padding-top: 15px;
 }
 .main .container{
-    background: url('../../img/onda.svg')no-repeat;
-    background-size: cover;
-    height: 767px;
+    background-size: 200% 100% !important;
+    animation: move 10s ease-in-out infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(125deg,  rgba(27,98,203,1) 10%, rgb(48, 156, 206) 90%);
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+@keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    50% {
+        background-position: 100% 0
+    }
+
+    100% {
+        background-position: 0 0
+    }
 }
 .main .container .text-container{
     color: #ffff;
@@ -829,10 +847,12 @@
         margin: 0 281px;
     }
     .main .container{
-        background: url('../../img/ondaM.svg')no-repeat;
-        background-size: cover;
+        background-size: 200% 100% !important;
+        animation: move 5s ease-in-out infinite;
+        transform: translate3d(0, 0, 0);
+        background: linear-gradient(125deg,  rgba(27,98,203,1) 10%, rgb(48, 156, 206) 90%);
         width: 100%;
-        height: 650px;
+        height: 500px;
         display: flex;
         align-items: center;
         justify-content: space-between;

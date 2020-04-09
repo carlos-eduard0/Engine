@@ -1,6 +1,6 @@
 import React from 'react';
 import './main.css'
-import vetor from '../../img/vetor.png';
+import vetor from '../../img/userEngineW.svg';
 import icone1 from '../../img/icone1.svg'
 import icone2 from '../../img/icone2.svg'
 import icone3 from '../../img/icone3.svg'
