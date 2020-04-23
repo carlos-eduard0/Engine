@@ -1,11 +1,19 @@
 import React from 'react';
+import { useState } from 'react';
 import './main.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Link } from 'react-router-dom';
+
+import Modal from '../modal/index';
+
 function Service() {
+    const [ isModalVisible, setIsModalVisible ] = useState(false);
+
+
+
     return (
         <div className="body-main">
             <main className="content-service">
@@ -16,7 +24,10 @@ function Service() {
                 </header>
 
                 <div className="link">
-                    <Link><AddCircleOutlineIcon className="iconNew"></AddCircleOutlineIcon>Adicionar novo serviço</Link>
+                    <Link className="iconNew" onClick={()=> setIsModalVisible(true)}><AddCircleOutlineIcon ></AddCircleOutlineIcon>Adicionar novo serviço</Link>
+                    {isModalVisible ? 
+                        (<Modal onClose={ () => setIsModalVisible(false)}>
+                        </Modal>) : null}
                 </div>
                 <div className="services">
                     <div className="services-grid">
