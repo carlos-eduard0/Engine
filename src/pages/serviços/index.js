@@ -7,6 +7,8 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Link } from 'react-router-dom';
 
+import { FiTrash2 } from 'react-icons/fi';
+
 import api from '../../services/api';
 
 import Modal from '../modal/index';
@@ -16,7 +18,7 @@ function Service() {
 
 
     const [servicos, setServicos] = useState([]);
-    const empresaId = '09d41078';
+    const empresaId = '5fd71652';
     
     useEffect(() => {
         api.get('servicos/empresa', {
@@ -27,6 +29,21 @@ function Service() {
             setServicos(response.data);
         })
     }, [empresaId]);
+
+
+    async function handleDeleteServico(id){
+        try {
+            await api.delete(`servicos/${id}`, {
+                headers: {
+                    Authorization: empresaId,
+                }
+            });
+
+            setServicos(servicos.filter(servicos => servicos.id !== id));
+        }catch (err) {
+            alert('Erro ao deletar caso, tente novamente')
+        }
+    }
 
 
     return (
@@ -48,9 +65,13 @@ function Service() {
                     <div className="services-grid">
 
                         {servicos.map(servico => ( 
-                            <div className="item-sevice">
+                            <div key={servico.id} className="item-sevice">
                             <div className="cont-service">
-                                <header><p>{servico.nome_servico}</p></header>
+                                <header><p>{servico.nome_servico} 
+                                <button  onClick={() => handleDeleteServico(servico.id)} type="button">
+                                    <FiTrash2 size={20} color="#a8a8b3" />
+                                </button></p>
+                                </header>
                                 <main>
                                     <SettingsIcon className="icon-service-cont"></SettingsIcon>
                                 </main>

@@ -17,7 +17,7 @@ const Modal = ({ id = 'modal', onClose = () => {}, children }) => {
     const [descricao, setDescricao] = useState('');
 
 
-    const empresaId = "09d41078";
+    const empresaId = "5fd71652";
 
     async function addServico(e){
         e.preventDefault();
@@ -36,10 +36,10 @@ const Modal = ({ id = 'modal', onClose = () => {}, children }) => {
                     Authorization: empresaId,
                 }
             });
-            alert("Deu certo");
+            alert("Serviço cadastrado");
             onClose();
         }catch (err){
-            alert("erro no cadastro")
+            alert("erro no cadastro", err)
         };
     }
 

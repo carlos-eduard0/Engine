@@ -25,6 +25,13 @@
     }
 }
 
+.content-service button{
+    right: 24%;
+}
+
+
+
+
 .content-service  .header-content{
     display: flex;
     flex-direction: row;
