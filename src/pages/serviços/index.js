@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './main.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -7,11 +7,43 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Link } from 'react-router-dom';
 
+import { FiTrash2 } from 'react-icons/fi';
+
+import api from '../../services/api';
+
 import Modal from '../modal/index';
 
 function Service() {
     const [ isModalVisible, setIsModalVisible ] = useState(false);
 
+
+    const [servicos, setServicos] = useState([]);
+    const empresaId = '5fd71652';
+    
+    useEffect(() => {
+        api.get('servicos/empresa', {
+            headers: {
+                Authorization: empresaId,
+            }
+        }).then(response => {
+            setServicos(response.data);
+        })
+    }, [empresaId]);
+
+
+    async function handleDeleteServico(id){
+        try {
+            await api.delete(`servicos/${id}`, {
+                headers: {
+                    Authorization: empresaId,
+                }
+            });
+
+            setServicos(servicos.filter(servicos => servicos.id !== id));
+        }catch (err) {
+            alert('Erro ao deletar caso, tente novamente')
+        }
+    }
 
 
     return (
@@ -31,20 +63,33 @@ function Service() {
                 </div>
                 <div className="services">
                     <div className="services-grid">
-                        <div className="item-sevice">
+
+                        {servicos.map(servico => ( 
+                            <div key={servico.id} className="item-sevice">
                             <div className="cont-service">
-                                <header><p>Troca de Amortecedor</p></header>
+                                <header><p>{servico.nome_servico} 
+                                <button  onClick={() => handleDeleteServico(servico.id)} type="button">
+                                    <FiTrash2 size={20} color="#a8a8b3" />
+                                </button></p>
+                                </header>
                                 <main>
                                     <SettingsIcon className="icon-service-cont"></SettingsIcon>
                                 </main>
                                 <footer className="preco">
                                     <AttachMoneyIcon></AttachMoneyIcon>
-                                    <h3>200,00</h3>
+                                <h3>{servico.valor_servico}</h3>
                                 </footer>
                             </div>
                         </div>
+                        ))}
+
+
+
                     </div>
                 </div>
+
+
+                
             </main>
         </div>
     )
