@@ -20,7 +20,8 @@
     "react-scripts": "3.4.0",
     "suggestion-react-input-search": "^1.4.0",
     "sweetalert2": "^9.10.8",
-    "sweetalert2-react-content": "^3.0.1"
+    "sweetalert2-react-content": "^3.0.1",
+    "universal-cookie": "^4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -39,6 +39,17 @@
    
 }
 
+#logout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    padding: 14px 0;
+    font-size: 17px;
+    cursor: pointer;
+}
+
 .body-painel .main-painel nav ul .active {
   background-color: rgb(68, 68, 68);
   transition: transform 0.5s 0s ease-in-out;
@@ -55,4 +66,8 @@
 }
 .body-painel .main-painel nav ul li .icon.dash{
     color: #2B8FCD;
+}
+
+.body-painel .main-painel nav ul li .icon.logout{
+    color: #7f8c8d;
 }

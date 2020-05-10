@@ -1,14 +1,41 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import React, {useState} from 'react';
+import { BrowserRouter as Router, Switch, Route, NavLink, useHistory } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+import api from '../../services/api';
+
 import Dashboard from '../dashboard';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import SettingsIcon from '@material-ui/icons/Settings';
 import StarIcon from '@material-ui/icons/Star';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import logoBranca from '../../img/logo-branca.png';
 import Service from '../serviços';
 import Star from   '../avaliações';
 import './main.css'
 function Painel() {
+
+    async function handleUserLogout(){
+        cookies.remove('id', {path:'/'}); //Deleta o cookie
+
+        history.push('/');    
+    }
+
+    const cookies = new Cookies();
+    const history = useHistory();
+    const id = cookies.get('id');
+
+    const [empresa, setEmpresa] = useState(''); 
+
+    const data = {
+        id
+    }
+
+    const res = api.post('/empresa/get', data)
+        .then(response => {
+            setEmpresa(response.data); // Aqui tão os dados da empresa e etc
+        });
+
+
     return (
         <Router>
             <div className="body-painel">
@@ -21,6 +48,7 @@ function Painel() {
                             <li><NavLink to={'/painel/dash'}><DashboardIcon className="icon dash"></DashboardIcon>Dashboard</NavLink></li>
                             <li><NavLink to={'/painel/service'}><SettingsIcon className="icon serv"></SettingsIcon>Meus Serviços</NavLink></li>
                             <li><NavLink to={'/painel/star'}><StarIcon className="icon star"></StarIcon>Avaliações</NavLink></li>
+                            <li id='logout' onClick={handleUserLogout}><ExitToAppIcon className="icon logout"></ExitToAppIcon>Logout</li>
                         </ul>
                     </nav>
                 </div>
