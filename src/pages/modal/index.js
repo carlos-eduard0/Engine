@@ -1,5 +1,6 @@
 import React, { useState } from  'react';
 import api from '../../services/api';
+import Cookies from 'universal-cookie';
 import './styles.css';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
@@ -15,9 +16,10 @@ const Modal = ({ id = 'modal', onClose = () => {}, children }) => {
     const [numero_vagas, setNumero_vagas] = useState('');
     const [categoria, setCategoria] = useState('');
     const [descricao, setDescricao] = useState('');
+    const cookies = new Cookies();
 
 
-    const empresaId = "5fd71652";
+    const empresaId = cookies.get('id');
 
     async function addServico(e){
         e.preventDefault();

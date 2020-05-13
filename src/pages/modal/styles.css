@@ -24,7 +24,7 @@
     outline: none;
     width: 32px;
     height: 32px;
-    right: calc(-100% + 64px);
+    left: calc(85% + 64px);
     top: 16px;
     cursor: pointer;
     display: flex;

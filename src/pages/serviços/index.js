@@ -7,6 +7,8 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Link } from 'react-router-dom';
 
+import Cookies from 'universal-cookie';
+
 import { FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
@@ -15,10 +17,11 @@ import Modal from '../modal/index';
 
 function Service() {
     const [ isModalVisible, setIsModalVisible ] = useState(false);
+    const cookies = new Cookies();
 
 
     const [servicos, setServicos] = useState([]);
-    const empresaId = '5fd71652';
+    const empresaId = cookies.get('id');
     
     useEffect(() => {
         api.get('servicos/empresa', {
