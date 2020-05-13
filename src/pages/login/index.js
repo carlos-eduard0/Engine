@@ -26,7 +26,7 @@ function Login() {
         if(res == 'error'){
            alert('Usuário ou senha incorreto');
         } else {
-            cookies.set('id', res.data, {path:'/'})
+            cookies.set('id', res.data, {path:'/painel'})
             try {
                 history.push('/painel');
             } catch(err){

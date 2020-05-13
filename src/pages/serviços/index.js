@@ -16,13 +16,26 @@ import api from '../../services/api';
 import Modal from '../modal/index';
 
 function Service() {
-    const [ isModalVisible, setIsModalVisible ] = useState(false);
     const cookies = new Cookies();
+    const [nome, setNome] = useState('');
+    const empresaId = cookies.get('id');
+
+    useEffect(() => {
+        api.get('empresa', {
+            headers: {
+                Authorization: empresaId,
+            }
+        }).then(response => {
+            setNome(response.data);
+        })
+    }, [empresaId]);
+
+
+    const [ isModalVisible, setIsModalVisible ] = useState(false);
 
 
     const [servicos, setServicos] = useState([]);
-    const empresaId = cookies.get('id');
-    
+
     useEffect(() => {
         api.get('servicos/empresa', {
             headers: {
@@ -55,7 +68,7 @@ function Service() {
 
                 <header className="header-content">
                     <h3>MEUS SERVIÇOS</h3>
-                    <span><AccountCircleIcon className="iconU"></AccountCircleIcon>Casa Do Amortecedor</span>
+                    <span><AccountCircleIcon className="iconU"></AccountCircleIcon>{nome.nome_empresa}</span>
                 </header>
 
                 <div className="link">

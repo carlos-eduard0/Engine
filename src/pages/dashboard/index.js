@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import './main.css'
+import './main.css';
+
+import Cookies from 'universal-cookie';
+import api from '../../services/api';
+
 function Painel(){
+    const cookies = new Cookies();
+    const [nome, setNome] = useState('');
+    const empresa_id = cookies.get('id');
+
+    useEffect(() => {
+        api.get('empresa', {
+            headers: {
+                Authorization: empresa_id,
+            }
+        }).then(response => {
+            setNome(response.data);
+        })
+    }, [empresa_id]);
+
+
     return(
        <div className="body-main">
             <main className="content">
                 
                 <header className="header-content">
                     <h3>DASHBOARD</h3>
-                    <span><AccountCircleIcon className="iconU"></AccountCircleIcon>Casa Do Amortecedor</span> 
+                        <span><AccountCircleIcon className="iconU"></AccountCircleIcon>{nome.nome_empresa}</span> 
                 </header>
                 <div className="content-menu">
                     <nav>
