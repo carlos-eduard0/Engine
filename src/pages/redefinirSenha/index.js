@@ -6,7 +6,7 @@ import './styles.css';
 import logobranca from '../../img/logo-branca.png';
 
 function RedefinirSenha() {
-    const history = useHistory();
+    // const history = useHistory();
 
     const [email, setEmail] = useState('');
 
@@ -19,7 +19,7 @@ function RedefinirSenha() {
 
         api.post('/reset/email', data)
         .then(response => {
-            if(response.data == 'email enviado'){
+            if(response.data === 'email enviado'){
                 alert('Foi enviado um email com as instruções para alterar sua senha');
             }
         })
