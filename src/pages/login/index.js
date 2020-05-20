@@ -23,14 +23,12 @@ function Login() {
 
         const res = await api.post('/sessions', data);
 
-        if(res == 'error'){
+        if(res === 'error'){
            alert('Usuário ou senha incorreto');
         } else {
             cookies.set('id', res.data, {path:'/painel'})
             try {
-                setTimeout(function(){
-                    history.push('/painel');
-                }, 500);
+                history.push('/painel');
             } catch(err){
                 alert('algo deu errado');
             }
