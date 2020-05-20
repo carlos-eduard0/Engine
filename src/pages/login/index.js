@@ -28,7 +28,9 @@ function Login() {
         } else {
             cookies.set('id', res.data, {path:'/painel'})
             try {
-                history.push('/painel');
+                setTimeout(function(){
+                    history.push('/painel');
+                }, 500);
             } catch(err){
                 alert('algo deu errado');
             }

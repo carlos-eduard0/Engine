@@ -13,14 +13,14 @@ import Service from '../serviços';
 import Star from   '../avaliações';
 import './main.css'
 function Painel() {
+    const cookies = new Cookies();
 
     async function handleUserLogout(){
-        cookies.remove('id', {path:'/'}); //Deleta o cookie
-
+        cookies.remove('id', {path:'/painel'});
         history.push('/');    
     }
 
-    const cookies = new Cookies();
+    
     const history = useHistory();
     const id = cookies.get('id');
 
@@ -31,9 +31,9 @@ function Painel() {
     }
 
     const res = api.post('/empresa/get', data)
-        .then(response => {
-            setEmpresa(response.data); // Aqui tão os dados da empresa e etc
-        });
+     .then(response => {
+         setEmpresa(response.data); // Aqui tão os dados da empresa e etc
+     });
 
 
     return (

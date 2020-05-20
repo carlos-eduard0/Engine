@@ -4,7 +4,6 @@ const cookies = new Cookies();
 
 class Auth{
 	constructor(){
-		this.authenticated = false;
 		this.user = '';
 	}
 
@@ -12,9 +11,9 @@ class Auth{
 		this.user = cookies.get('id');
 
 		if(!this.user){ 
-			this.authenticated = false;
+			return false;
 		} else {
-			this.authenticated = true;
+			return true;
 		}
 	}
 }
