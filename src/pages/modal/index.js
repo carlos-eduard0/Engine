@@ -8,7 +8,7 @@ import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 const Modal = ({ id = 'modal', onClose = () => {}, children }) => {
 
     const handleOutsideClick = (e) => {
-        if(e.target.id === id) onClose();
+        if(e.target.id == id) onClose();
     }
  
     const [nome, setNome] = useState('');

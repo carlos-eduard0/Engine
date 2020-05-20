@@ -21,16 +21,16 @@ function CodigoSenha() {
             updateCode: token
         })
         .then(response => {
-            if(response.data.message === 'link ta ok'){
+            if(response.data.message == 'link ta ok'){
                 setIdEmpresa(response.data.id);
-                if(senha === con_senha){
+                if(senha == con_senha){
                     api.post('/reset/password', {
                         id: response.data.id,
                         senha
                     })
                     .then(response => {
                         console.log(response.data);
-                        if(response.data.message === 'senha atualizada'){
+                        if(response.data.message == 'senha atualizada'){
                             alert('a senha foi alterada com sucesso');
                             history.push('/');
                         } else {
