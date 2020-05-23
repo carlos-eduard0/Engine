@@ -14,27 +14,12 @@ import Star from   '../avaliações';
 import './main.css'
 function Painel() {
     const cookies = new Cookies();
+    const history = useHistory();
 
     async function handleUserLogout(){
         cookies.remove('id', {path:'/painel'});
         history.push('/');    
     }
-
-    
-    const history = useHistory();
-    const id = cookies.get('id');
-
-    const [empresa, setEmpresa] = useState(''); 
-
-    const data = {
-        id
-    }
-
-    const res = api.post('/empresa/get', data)
-     .then(response => {
-         setEmpresa(response.data); // Aqui tão os dados da empresa e etc
-     });
-
 
     return (
         <Router>
