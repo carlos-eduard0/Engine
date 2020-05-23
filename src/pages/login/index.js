@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Cookies from 'universal-cookie';
 import api from '../../services/api';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Redirect} from 'react-router-dom';
 
 import './styles.css';
 import logobranca from '../../img/logo-branca.png';
@@ -16,24 +16,35 @@ function Login() {
 
     async function handleLogin(e){
         e.preventDefault();
+
         const data = {
             email,
             senha
         };
 
-        const res = await api.post('/sessions', data);
+        // const res = await api.post('/sessions', data);
+        
+        // if(res.message == 'error'){
+        //    alert('Usuário ou senha incorreto');
+        // } else {
+        //     await cookies.set('id', res.data, {path:'/painel'})
+        //     try {
+        //         setTimeout(function(){
+        //             history.push('/painel');
+        //         }, 500);
+        //     } catch(err){
+        //         alert('algo deu errado');
+        //     }
+        // }
 
-        if(res == 'error'){
-           alert('Usuário ou senha incorreto');
-        } else {
-            cookies.set('id', res.data, {path:'/painel'})
-            try {
-                setTimeout(function(){
-                    history.push('/painel');
-                }, 500);
-            } catch(err){
-                alert('algo deu errado');
-            }
+        try{
+            const res = await api.post('/sessions', data);
+
+            cookies.set('id', res.data, {path:'/painel'}); // Coloca os dados do user no cookie
+
+            history.push('/painel')
+        } catch (err){
+            alert('usuário ou senha incorreta');
         }
     }
 
