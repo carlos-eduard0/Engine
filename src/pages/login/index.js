@@ -22,27 +22,14 @@ function Login() {
             senha
         };
 
-        // const res = await api.post('/sessions', data);
-        
-        // if(res.message == 'error'){
-        //    alert('Usuário ou senha incorreto');
-        // } else {
-        //     await cookies.set('id', res.data, {path:'/painel'})
-        //     try {
-        //         setTimeout(function(){
-        //             history.push('/painel');
-        //         }, 500);
-        //     } catch(err){
-        //         alert('algo deu errado');
-        //     }
-        // }
-
         try{
             const res = await api.post('/sessions', data);
 
             cookies.set('id', res.data, {path:'/painel'}); // Coloca os dados do user no cookie
 
-            history.push('/painel')
+            setTimeout(function(){ 
+                history.push('/painel'); 
+            }, 1500);
         } catch (err){
             alert('usuário ou senha incorreta');
         }
