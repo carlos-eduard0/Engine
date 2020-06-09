@@ -148,13 +148,8 @@ export class Cadastro extends Component {
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}
-                cep={cep}
                 cidade={cidade}
                 uf={uf}
-                bairro={bairro}
-                endereco={endereco}
-                numero={numero}
-                complemento={complemento}
             />);
 
 
