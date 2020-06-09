@@ -42,7 +42,7 @@ function Login() {
                 <div className="form-login">
                     <form onSubmit={handleLogin}>
                         <strong>Login</strong>
-                        <label htmlFor="email">E-mail</label>
+                        <label htmlFor="email">E-mailg</label>
                         <input type="email" value={email} onChange={e => setEmail(e.target.value)} id="email" required />
 
                         <label htmlFor="senha">Senha</label>
