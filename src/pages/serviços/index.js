@@ -13,7 +13,7 @@ import { FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import Modal from '../modal/index';
+import Modal from '../adcionar_serviços/index';
 
 function Service() {
     const cookies = new Cookies();

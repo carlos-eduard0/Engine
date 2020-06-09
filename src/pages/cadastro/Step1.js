@@ -12,7 +12,7 @@ class Step1 extends Component {
             <div className="form"  >
                 <strong>Sobre o dono da empresa</strong>
                 <form action="submit" onSubmit={this.continue}>
-                    <label htmlFor="nome">Nome</label>
+                    <label htmlFor="nome">Nome Completo</label>
                     <input
                         type="text"
                         name="nome"
