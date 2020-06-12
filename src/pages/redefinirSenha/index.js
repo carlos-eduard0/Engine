@@ -20,15 +20,15 @@ function RedefinirSenha() {
 
         console.log('aaa');
 
-        const res = await api.put('/reset/email', data)
+        // const res = await api.put('/reset/email', data)
 
-        console.log(res.data.message);
+        // console.log(res.data.message);
 
-        if(res.data.message == 'email enviado'){
-            alert('Foi enviado um email com as instruções para alterar sua senha');
-        } else {
-            alert('Este email não esta cadastrado');
-        }
+        // if(res.data.message == 'email enviado'){
+        //     alert('Foi enviado um email com as instruções para alterar sua senha');
+        // } else {
+        //     alert('Este email não esta cadastrado');
+        // }
     }
 
     return (
