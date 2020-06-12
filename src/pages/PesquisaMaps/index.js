@@ -1,6 +1,10 @@
 import React from "react";
 import usePlacesAutocomplete from "use-places-autocomplete";
 import {
+  geocodeByAddress,
+  getLatLng
+} from "react-places-autocomplete";
+import {
   Combobox,
   ComboboxInput,
   ComboboxPopover,
@@ -10,7 +14,7 @@ import {
 
 import "@reach/combobox/styles.css";
 
-const PlacesAutocomplete = () => {
+const PlacesAutoComplete = ( latLng, results) => {
   const {
     ready,
     value,
@@ -18,12 +22,22 @@ const PlacesAutocomplete = () => {
     setValue,
   } = usePlacesAutocomplete();
 
+  const [coordinates, setCoordinates] = React.useState({
+    lat: null,
+    lng: null
+  });
+
   const handleInput = (e) => {
     setValue(e.target.value);
   };
 
-  const handleSelect = (val) => {
+  const handleSelect = async (val) => {
+    const results = await geocodeByAddress(val);
+    const latLng = await getLatLng(results[0]);
     setValue(val, false);
+    setCoordinates(latLng);
+
+    console.log(coordinates, results);
   };
 
   return (
@@ -41,4 +55,4 @@ const PlacesAutocomplete = () => {
   );
 };
 
-export default PlacesAutocomplete;
+export default PlacesAutoComplete;

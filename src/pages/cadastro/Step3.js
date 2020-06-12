@@ -34,7 +34,7 @@ class Step3 extends Component {
         this.props.prevStep();
     }
     render() {
-        const { cidade, uf, bairro, endereco, numero, complemento, handleChange } = this.props;
+        const { cidade, uf, bairro, endereco, numero, complemento, latLng, results, handleChange } = this.props;
         return (
             <div className="form">
                 <strong>Endereço da Empresa</strong>

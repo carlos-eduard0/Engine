@@ -10,7 +10,21 @@ import HomeIcon from '@material-ui/icons/Home';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'; 
+import usePlacesAutocomplete from "use-places-autocomplete";
+import {
+  geocodeByAddress,
+  getLatLng
+} from "react-places-autocomplete";
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+} from "@reach/combobox";
+
+import "@reach/combobox/styles.css";
 export class Cadastro extends Component {
     state = {
         step: 1,
