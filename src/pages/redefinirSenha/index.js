@@ -20,8 +20,8 @@ function RedefinirSenha() {
 
 
         const res = await api.put('/reset/email', data)
-        
-        console.log(res.message);
+
+        console.log(res.message.data);
 
         if(res.message == 'email enviado'){
             alert('Foi enviado um email com as instruções para alterar sua senha');
