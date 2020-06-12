@@ -21,9 +21,9 @@ function RedefinirSenha() {
 
         const res = await api.put('/reset/email', data)
 
-        console.log(res.message.data);
+        console.log(res.data.message);
 
-        if(res.message == 'email enviado'){
+        if(res.data.message == 'email enviado'){
             alert('Foi enviado um email com as instruções para alterar sua senha');
         } else {
             alert('Este email não esta cadastrado');
