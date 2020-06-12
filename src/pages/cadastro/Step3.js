@@ -35,6 +35,7 @@ class Step3 extends Component {
     }
     render() {
         const { cidade, uf, bairro, endereco, numero, val, handleChange, onGetLatLng } = this.props;
+        console.log(onGetLatLng);
         return (
             <div className="form">
                 <strong>Endereço da Empresa</strong>
@@ -60,7 +61,7 @@ class Step3 extends Component {
                         />
                     </div>
                     <label>Endereço</label>
-                    <BoxMaps onGetLatLng={onGetLatLng}></BoxMaps>
+                    <BoxMaps onGetLatLng={onGetLatLng} ></BoxMaps>
                     <div className="button-group">
                         <button id="prev" onClick={this.back}>voltar</button>
                         <button type="submit" id="next">próximo</button>

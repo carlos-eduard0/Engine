@@ -121,9 +121,10 @@ export class Cadastro extends Component {
     handleChange = input => e => {
         this.setState({ [input]: e.target.value });
     }
-    onGetLatLng = (latLng) =>{
-        this.setState({latLng})
+    onGetLatLng = (latLng, results) =>{
+        this.setState({latLng, results})
       }
+      
     showStep = () => {
         const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, endereco, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha} = this.state;
 

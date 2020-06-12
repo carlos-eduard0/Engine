@@ -37,9 +37,10 @@ const PlacesAutoComplete = ({ onGetLatLng }) => {
     const results = await geocodeByAddress(val);
     const latLng = await getLatLng(results[0]);
     setValue(val, false);
-    onGetLatLng(latLng);
+    onGetLatLng([latLng, results[0].address_components]);
     setCoordinates(latLng);
 
+    console.log(results);
   };
   return (
     <Combobox onSelect={handleSelect} aria-labelledby="demo">
