@@ -14,12 +14,13 @@ import {
 
 import "@reach/combobox/styles.css";
 
-const PlacesAutoComplete = ( latLng, results) => {
+const PlacesAutoComplete = ({ onGetLatLng }) => {
   const {
     ready,
     value,
     suggestions: { status, data },
     setValue,
+    clearSuggestions,
   } = usePlacesAutocomplete();
 
   const [coordinates, setCoordinates] = React.useState({
@@ -32,25 +33,34 @@ const PlacesAutoComplete = ( latLng, results) => {
   };
 
   const handleSelect = async (val) => {
+    clearSuggestions()
     const results = await geocodeByAddress(val);
     const latLng = await getLatLng(results[0]);
     setValue(val, false);
+    onGetLatLng(latLng);
     setCoordinates(latLng);
 
-    console.log(coordinates, results);
   };
-
   return (
     <Combobox onSelect={handleSelect} aria-labelledby="demo">
-      <ComboboxInput value={value} onChange={handleInput} disabled={!ready} />
+      <ComboboxInput value={value} onChange={handleInput} disabled={!ready} className="inputEnd" />
       <ComboboxPopover>
         <ComboboxList>
           {status === "OK" &&
             data.map(({ id, description }) => (
-              <ComboboxOption key={id} value={description} />
+              <ComboboxOption key={id} value={description} style={{ paddingTop: 20, paddingBottom: 20 }}>
+
+              </ComboboxOption>
             ))}
+
         </ComboboxList>
       </ComboboxPopover>
+      <li className="logoGoogle">
+        <img
+          src="https://developers.google.com/maps/documentation/images/powered_by_google_on_white.png"
+          alt="Powered by Google"
+        />
+      </li>
     </Combobox>
   );
 };

@@ -11,20 +11,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import Swal from 'sweetalert2'; 
-import usePlacesAutocomplete from "use-places-autocomplete";
-import {
-  geocodeByAddress,
-  getLatLng
-} from "react-places-autocomplete";
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption,
-} from "@reach/combobox";
 
-import "@reach/combobox/styles.css";
 export class Cadastro extends Component {
     state = {
         step: 1,
@@ -49,6 +36,7 @@ export class Cadastro extends Component {
         endereco: '',
         numero: '',
         complemento: '',
+        latLng: '',
 
         //step 4
         nome_banco: '',
@@ -133,8 +121,11 @@ export class Cadastro extends Component {
     handleChange = input => e => {
         this.setState({ [input]: e.target.value });
     }
+    onGetLatLng = (latLng) =>{
+        this.setState({latLng})
+      }
     showStep = () => {
-        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, endereco, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
+        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, endereco, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha} = this.state;
 
         if (step === 1)
             return (<Step1
@@ -162,6 +153,7 @@ export class Cadastro extends Component {
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}
+                onGetLatLng={this.onGetLatLng}
                 cidade={cidade}
                 uf={uf}
             />);

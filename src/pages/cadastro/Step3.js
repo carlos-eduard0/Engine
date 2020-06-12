@@ -3,6 +3,7 @@ import { formatToCEP, isCEP } from 'brazilian-values';
 import Swal from 'sweetalert2';
 import BoxMaps from '../PesquisaMaps/index';
 class Step3 extends Component {
+  
     continue = e => {
         e.preventDefault();
         const Toast = Swal.mixin({
@@ -28,13 +29,12 @@ class Step3 extends Component {
             this.props.nextStep();
         }
     }
-
     back = e => {
         e.preventDefault();
         this.props.prevStep();
     }
     render() {
-        const { cidade, uf, bairro, endereco, numero, complemento, latLng, results, handleChange } = this.props;
+        const { cidade, uf, bairro, endereco, numero, val, handleChange, onGetLatLng } = this.props;
         return (
             <div className="form">
                 <strong>Endereço da Empresa</strong>
@@ -60,7 +60,7 @@ class Step3 extends Component {
                         />
                     </div>
                     <label>Endereço</label>
-                    <BoxMaps></BoxMaps>
+                    <BoxMaps onGetLatLng={onGetLatLng}></BoxMaps>
                     <div className="button-group">
                         <button id="prev" onClick={this.back}>voltar</button>
                         <button type="submit" id="next">próximo</button>
