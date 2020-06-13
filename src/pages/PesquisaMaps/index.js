@@ -10,6 +10,7 @@ import {
   ComboboxPopover,
   ComboboxList,
   ComboboxOption,
+  ComboboxOptionText,
 } from "@reach/combobox";
 
 import "@reach/combobox/styles.css";
@@ -47,11 +48,15 @@ const PlacesAutoComplete = ({ onGetLatLng }) => {
       <ComboboxInput value={value} onChange={handleInput} disabled={!ready} className="inputEnd" />
       <ComboboxPopover>
         <ComboboxList>
+
           {status === "OK" &&
             data.map(({ id, description }) => (
-              <ComboboxOption key={id} value={description} style={{ paddingTop: 20, paddingBottom: 20 }}>
+              <>
+                <ComboboxOption key={id} value={description} style={{ paddingTop: 20, paddingBottom: 20 }} >
+                  📍" <ComboboxOptionText />
+                </ComboboxOption>
 
-              </ComboboxOption>
+              </>
             ))}
 
         </ComboboxList>
