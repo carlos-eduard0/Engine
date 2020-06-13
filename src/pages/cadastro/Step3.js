@@ -1,41 +1,59 @@
 import React, { Component } from 'react';
-import { formatToCEP, isCEP } from 'brazilian-values';
-import Swal from 'sweetalert2';
 import BoxMaps from '../PesquisaMaps/index';
+import Upload from '../uploadImagem/index';
+import FileList from '../FileList/index';
+import filesize from 'filesize';
+
+var data;
 class Step3 extends Component {
-  
     continue = e => {
         e.preventDefault();
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            onOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-        const { cep } = this.props
-
-        if (!isCEP(cep)) {
-            Toast.fire({
-                icon: 'error',
-                title: 'CEP Inválido'
-            })
-        }
-        else if (isCEP(cep)) {
-            this.props.nextStep();
-        }
+       
+        this.props.nextStep();
     }
+
+    state = {
+        uploadedFiles: [],
+    }
+
+    handleUpload = files => {
+        const uploadedFiles = files.map(file => ({
+            file,
+            id: file.name,
+            name: file.name,
+            readableSize: filesize(file.size),
+            preview: URL.createObjectURL(file),
+            progress: 0,
+            uploaded: false,
+            error: false,
+            url: null,
+        }))
+        this.setState({
+            uploadedFiles
+        });
+
+        data = {uploadedFiles};
+        console.log(data);
+        uploadedFiles.forEach(this.processUpload);
+
+    };
+
+    processUpload = (uploadedFile) => {
+        const data = new FormData();
+
+        data.append('file', uploadedFile.file, uploadedFile.name);
+         
+    
+    }
+
+
     back = e => {
         e.preventDefault();
         this.props.prevStep();
     }
     render() {
-        const { cidade, uf, bairro, endereco, numero, val, handleChange, onGetLatLng } = this.props;
-        console.log(onGetLatLng);
+        const { uploadedFiles } = this.state;
+        const { cidade, uf, handleChange, onGetLatLng, data  } = this.props;
         return (
             <div className="form">
                 <strong>Endereço da Empresa</strong>
@@ -62,6 +80,8 @@ class Step3 extends Component {
                     </div>
                     <label>Endereço</label>
                     <BoxMaps onGetLatLng={onGetLatLng} ></BoxMaps>
+                    <Upload onUpload={this.handleUpload} />
+                    {!!uploadedFiles.length && (<FileList files={uploadedFiles} onDelete={this.handleDelete} />)}
                     <div className="button-group">
                         <button id="prev" onClick={this.back}>voltar</button>
                         <button type="submit" id="next">próximo</button>

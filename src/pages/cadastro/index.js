@@ -11,7 +11,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import Swal from 'sweetalert2'; 
-
+import Upload from '../uploadImagem/index';
 export class Cadastro extends Component {
     state = {
         step: 1,
@@ -29,12 +29,8 @@ export class Cadastro extends Component {
         orgao_emissor: '',
 
         //step 3
-        cep: '',
         cidade: '',
         uf: '',
-        bairro: '',
-        endereco: '',
-        numero: '',
         complemento: '',
         latLng: '',
 
@@ -126,7 +122,7 @@ export class Cadastro extends Component {
       }
       
     showStep = () => {
-        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, endereco, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha} = this.state;
+        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cidade, uf, nome_banco, agencia, conta, digito, senha, confirmar_senha} = this.state;
 
         if (step === 1)
             return (<Step1
@@ -158,7 +154,6 @@ export class Cadastro extends Component {
                 cidade={cidade}
                 uf={uf}
             />);
-
 
         else if (step === 4)
             return (<Step4
@@ -198,7 +193,7 @@ export class Cadastro extends Component {
                             <Link to={'/'}><img src={logo} alt="logo_engine" /></Link>
                         </div>
                     </div>
-                    <div className="render">
+                    <div className="render">    
                         {this.showStep()}
                     </div>
                 </section>
