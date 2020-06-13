@@ -17,12 +17,16 @@ function RedefinirSenha() {
             email
         };
         
-        console.log('res.data');
 
-        const res = await api.post('/reset/email', data)
+        
 
+        const res = await api.post('/reset/email');
+        // const res = await api.post('/reset/email', data);
 
-        if(res.data == 'email enviado'){
+        console.log('aaa');
+        // console.log(res.data);
+
+        if(res.data.message == 'email enviado'){
             alert('Foi enviado um email com as instruções para alterar sua senha');
         } else {
             alert('Este email não esta cadastrado');
