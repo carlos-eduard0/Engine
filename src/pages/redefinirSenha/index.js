@@ -19,6 +19,7 @@ function RedefinirSenha() {
         
         const res = await api.put('/reset/email', data);
 
+        console.log('res');
         console.log(res);
 
         // if(res.data.message == 'email enviado'){
