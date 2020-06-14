@@ -53,16 +53,17 @@ class Step6 extends Component {
                 progress
               })
             }
-          }, {
-            headers: {
-                Authorization: id_empresa,
-            }
           }).then(response => {
             this.updateFile(uploadedFile.id, {
               uploaded:true,
               id: response.data._id,
               url: response.data.url
-            });
+            }),
+            {
+              headers: {
+                  Authorization: id_empresa,
+              }
+            }
           })
           .catch(() => {
             this.updateFile(uploadedFile.id, {

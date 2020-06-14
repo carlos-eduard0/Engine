@@ -92,6 +92,7 @@ export class Cadastro extends Component {
         console.log(res.data.id);
         cookies.set('id', res.data.id)
         this.nextStep()
+        //TESTE //ok
         try {
             if (res.data) {
                 Toast.fire({
