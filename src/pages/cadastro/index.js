@@ -10,6 +10,7 @@ import logo from '../../img/logoEngine.png'
 import HomeIcon from '@material-ui/icons/Home';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { Link } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 import api from '../../services/api';
 import Swal from 'sweetalert2'; 
 
@@ -46,6 +47,7 @@ export class Cadastro extends Component {
         confirmar_senha: '',
     }
     addempresa = async () => {
+        const cookies = new Cookies();
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -88,6 +90,7 @@ export class Cadastro extends Component {
             digito
         })
         console.log(res.data);
+        cookies.set('id', res.data)
         try {
             if (res.data) {
                 Toast.fire({

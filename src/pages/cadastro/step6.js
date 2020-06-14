@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import filesize from 'filesize';
+import Cookies from 'universal-cookie';
 
 import api from '../../services/api';
 import FileList from '../FileList';
 import Upload from '../uploadImagem';
 import './form.css'
 class Step6 extends Component {
+
     state = {
         uploadedFiles: [],
     }
@@ -31,9 +33,12 @@ class Step6 extends Component {
     };
 
     processUpload = (uploadedFile) => {
+        const cookies = new Cookies();
         const data = new FormData();
 
-        data.append('file', uploadedFile.file, uploadedFile.name);
+        const id_empresa = cookies.get('id');
+
+        data.append('file', uploadedFile.file, uploadedFile.name, );
          
         api.post('empresa-logo', data, {
             onUploadProgress: e => {
@@ -42,6 +47,10 @@ class Step6 extends Component {
               this.updateFile(uploadedFile.id, {
                 progress
               })
+            }
+          }, {
+            headers: {
+                Authorization: id_empresa,
             }
           }).then(response => {
             this.updateFile(uploadedFile.id, {
