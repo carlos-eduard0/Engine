@@ -89,7 +89,7 @@ export class Cadastro extends Component {
             conta,
             digito
         })
-        console.log(res.data.data.id);
+        console.log(res.data.id);
         cookies.set('id', res.data.id)
         this.nextStep()
         try {
