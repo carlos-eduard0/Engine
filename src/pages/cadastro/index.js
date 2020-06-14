@@ -5,6 +5,7 @@ import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './step4';
 import Step5 from './step5';
+import Step6 from './step6';
 import logo from '../../img/logoEngine.png'
 import HomeIcon from '@material-ui/icons/Home';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
@@ -180,7 +181,10 @@ export class Cadastro extends Component {
                 handleChange={this.handleChange}
                 senha={senha}
                 confirmar_senha={confirmar_senha}
-                addempresa={this.addempresa}
+            />);
+
+            else if (step === 6)
+            return (<Step6
             />);
     }
     render() {

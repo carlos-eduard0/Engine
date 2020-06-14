@@ -3,7 +3,7 @@ import './form.css'
 class Step5 extends Component {
     continue = e => {
         e.preventDefault();
-        this.props.addempresa();
+        this.props.nextStep();
     }
     back = e => {
         e.preventDefault();
