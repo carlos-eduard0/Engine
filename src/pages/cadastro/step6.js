@@ -32,6 +32,12 @@ class Step6 extends Component {
 
     };
 
+    updateFile = (id, data) => {
+      this.setState({ uploadedFiles: this.state.uploadedFiles.map(uploadedFile => {
+        return id === uploadedFile.id ? {...uploadedFile, ...data} : uploadedFile;
+      }) })
+    };
+
     processUpload = (uploadedFile) => {
         const cookies = new Cookies();
         const data = new FormData();
@@ -65,6 +71,8 @@ class Step6 extends Component {
             });
           });
     };
+
+    
 
     render() {
         const { uploadedFiles } = this.state;
