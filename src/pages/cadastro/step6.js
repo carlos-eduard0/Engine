@@ -46,7 +46,7 @@ class Step6 extends Component {
 
         data.append('file', uploadedFile.file, uploadedFile.name, );
          
-        api.post('empresa-logo', data, {
+        api.post('empresa_logo', data, {
             onUploadProgress: e => {
               const progress = parseInt(Math.round((e.loaded * 100) / e.total));
     
