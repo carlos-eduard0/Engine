@@ -32,7 +32,7 @@ function CodigoSenha() {
                         console.log(response.data);
                         if(response.data.message == 'senha atualizada'){
                             alert('a senha foi alterada com sucesso');
-                            history.push('/');
+                            history.push('/login');
                         } else {
                             alert('tente novamente mais tarde');
                         }
