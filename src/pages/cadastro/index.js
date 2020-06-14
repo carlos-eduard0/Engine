@@ -11,7 +11,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import Swal from 'sweetalert2'; 
-import Upload from '../uploadImagem/index';
+
 export class Cadastro extends Component {
     state = {
         step: 1,
@@ -56,7 +56,10 @@ export class Cadastro extends Component {
                 toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
         })
-        const { nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cep, cidade, uf, bairro, endereco, numero, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
+        const { nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cidade, uf, latLng, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
+        console.log(latLng);
+        const Array = latLng[1];
+        console.log(Array);
         const res = await api.post('/empresa', {
             nome,
             senha,
@@ -68,13 +71,16 @@ export class Cadastro extends Component {
             cnpj,
             rg,
             orgao_emissor,
-            cep,
             cidade,
             uf,
-            bairro,
-            endereco,
-            numero,
+            latitude:latLng[0].lat,
+            longitude:latLng[0].lng,
+            bairro:Array[2].long_name,
+            cep:Array[6].long_name,
+            numero:Array[0].long_name,
+            rua:Array[1].long_name,
             complemento,
+            bairro:Array[2].long_name,
             nome_banco,
             agencia,
             conta,
@@ -122,7 +128,7 @@ export class Cadastro extends Component {
       }
       
     showStep = () => {
-        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cidade, uf, nome_banco, agencia, conta, digito, senha, confirmar_senha} = this.state;
+        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, complemento, cidade, uf, nome_banco, agencia, conta, digito, senha, confirmar_senha} = this.state;
 
         if (step === 1)
             return (<Step1
@@ -151,6 +157,7 @@ export class Cadastro extends Component {
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}
                 onGetLatLng={this.onGetLatLng}
+                complemento={complemento}
                 cidade={cidade}
                 uf={uf}
             />);
