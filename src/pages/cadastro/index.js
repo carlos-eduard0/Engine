@@ -91,6 +91,7 @@ export class Cadastro extends Component {
         })
         console.log(res.data);
         cookies.set('id', res.data)
+        this.nextStep()
         try {
             if (res.data) {
                 Toast.fire({
@@ -179,7 +180,7 @@ export class Cadastro extends Component {
 
         else if (step === 5)
             return (<Step5
-                nextStep={this.nextStep}
+                addempresa={this.addempresa}
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}
                 senha={senha}
