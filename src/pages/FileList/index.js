@@ -1,13 +1,13 @@
 import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { MdCheckCircle, MdError, MdLink } from 'react-icons/md';
-
+import {uniqueId} from 'lodash'
 import { Container, FileInfo, Preview } from './main';
 
 const FileList = ({ files, onDelete }) => (
     <Container>
        {files.map(uploadedFile => ( 
-            <li key={uploadedFile.id}>
+            <li key={uniqueId}>
             <FileInfo>
                 <Preview src={uploadedFile.preview} />
                 <div>

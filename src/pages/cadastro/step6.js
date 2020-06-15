@@ -73,7 +73,6 @@ class Step6 extends Component {
 
     render() {
         const { uploadedFiles } = this.state;
-
         return (
             <div> 
                 <h1>olá</h1>
