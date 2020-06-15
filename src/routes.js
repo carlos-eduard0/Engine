@@ -32,7 +32,7 @@ const LoginRoute = ({ component: Component, ... rest}) => (
             auth.user ? ( 
 
                 <Redirect to={{ pathname: "/painel", state: { from: props.location }}} />
-            ) : 
+            ) : (
 
                 <Component {... props} />
             )
