@@ -13,10 +13,12 @@ class Step6 extends Component {
     }
 
     handleUpload = files => {
+      console.log(files)
         const uploadedFiles = files.map(file => ({
             file,
             id: file.name,
             name: file.name,
+            key: file.key,
             readableSize: filesize(file.size),
             preview: URL.createObjectURL(file),
             progress: 0,
@@ -44,8 +46,13 @@ class Step6 extends Component {
 
         const id_empresa = cookies.get('id');
 
-        data.append('file', uploadedFile.file, uploadedFile.name, );
-        api.post('/empresaLogo', data, {
+        data.append("file", uploadedFile.file, uploadedFile.name, uploadedFile.key );
+        api.post('/empresaLogo', data,
+        {
+          headers: {
+              Authorization: id_empresa,
+          }
+        } ,{
             onUploadProgress: e => {
               const progress = parseInt(Math.round((e.loaded * 100) / e.total));
     
@@ -66,11 +73,7 @@ class Step6 extends Component {
             });
           });
     };
-    // {
-    //   headers: {
-    //       Authorization: id_empresa,
-    //   }
-    // }
+
     
 
     render() {
@@ -87,5 +90,3 @@ class Step6 extends Component {
 }
 
 export default Step6;
-
-//testa ai
