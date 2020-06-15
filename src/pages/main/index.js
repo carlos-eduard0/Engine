@@ -5,7 +5,7 @@ import icone1 from '../../img/icone1.svg';
 import icone2 from '../../img/icone2.svg';
 import icone3 from '../../img/icone3.svg';
 import logoEngine from '../../img/logoEngine.png';
-import SvgCarro from '../../img/svgCarro.svg';
+import carroiconvetor from '../../img/carroiconvetor.svg';
 import { Link } from 'react-router-dom';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -33,8 +33,8 @@ function Content() {
                         <p data-aos='fade-down' data-aos-delay="100">Aproveite os beneficios da Engine e veja seu negócio girar como um motor, aumente suas vendas e apareça para seus clientes de forma simples e intuitiva!</p>
                         <Link to={'/cadastro'} data-aos='fade-down' data-aos-delay="200">Cadastrar minha empresa</Link>
                     </div>
-                    <div className="svgCarro">
-                        <img src={SvgCarro} alt="" />
+                    <div className="carroiconvetor">
+                        <img src={carroiconvetor} alt="carroiconvetor" />
                     </div>
                 </div>
 

@@ -17,14 +17,14 @@
     display: flex;
     align-items: center;
 }
-.svgCarro{
+.carroiconvetor{
     display: flex;
     justify-content: flex-end;
     position: relative;
     top: 100px;
   
 }
-.svgCarro img{
+.carroiconvetor img{
     width: 700px;
 }
 
@@ -255,11 +255,11 @@
   }
 
 @media (max-width: 330px) {
-    .svgCarro{
+    .carroiconvetor{
         display: none;
       
     }
-    .svgCarro img{
+    .carroiconvetor img{
         display: none;
     }
     .main{
@@ -443,11 +443,11 @@
         width: 90%;
         text-align: justify;
     }
-    .svgCarro{
+    .carroiconvetor{
         display: none;
       
     }
-    .svgCarro img{
+    .carroiconvetor img{
         display: none;
     }
     .main{
@@ -634,11 +634,11 @@
         width: 70%;
         text-align: left;
     }
-    .svgCarro{
+    .carroiconvetor{
         display: none;
       
     }
-    .svgCarro img{
+    .carroiconvetor img{
         display: none;
     }
     .main{
@@ -685,11 +685,11 @@
         width: 90%;
         text-align: left;
     }
-    .svgCarro{
+    .carroiconvetor{
         display: none;
       
     }
-    .svgCarro img{
+    .carroiconvetor img{
         display: none;
     }
     .main{
@@ -884,11 +884,11 @@
         width: 70%;
         text-align: left;
     }
-    .svgCarro{
+    .carroiconvetor{
         display: none;
       
     }
-    .svgCarro img{
+    .carroiconvetor img{
         display: none;
     }
     .main{
@@ -927,14 +927,14 @@
         height: 112px;
         padding: 0 80px;
     }
-    .svgCarro{
+    .carroiconvetor{
         display: flex;
         justify-content: flex-end;
         position: relative;
         top: 200px;
       
     }
-    .svgCarro img{
+    .carroiconvetor img{
         width: 500px;
     }
     
@@ -1045,14 +1045,14 @@
         align-items: center;
       }
 
-    .svgCarro{
+    .carroiconvetor{
         display: flex;
         justify-content: flex-end;
         position: relative;
         top: 200px;
       
     }
-    .svgCarro img{
+    .carroiconvetor img{
         width: 500px;
     }
     
