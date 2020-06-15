@@ -15,7 +15,7 @@ function Painel(){
     const empresa_id = cookies.get('id');
 
     useEffect(() => {
-        api.get('/empresa', {
+        api.get('/header', {
             headers: {
                 Authorization: empresa_id,
             }
