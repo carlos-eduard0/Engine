@@ -24,7 +24,6 @@ function CodigoSenha() {
             if(response.data.message == 'link ta ok'){
                 setIdEmpresa(response.data.id);
                 if(senha == con_senha){
-                    alert(response.data.id);
                     api.post('/reset/password', {
                         id: response.data.id,
                         senha:senha
