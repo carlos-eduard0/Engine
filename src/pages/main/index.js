@@ -29,7 +29,7 @@ function Content() {
                 </header>
                 <div className="content-main-itens">
                     <div className="text">
-                        <h1 data-aos='fade-down'>Você trabalha com carros e quer crescer seu fluxo de clientes e sua fatura ooo ?</h1>
+                        <h1 data-aos='fade-down'>Você trabalha com carros e quer crescer seu fluxo de clientes e sua fatura?</h1>
                         <p data-aos='fade-down' data-aos-delay="100">Aproveite os beneficios da Engine e veja seu negócio girar como um motor, aumente suas vendas e apareça para seus clientes de forma simples e intuitiva!</p>
                         <Link to={'/cadastro'} data-aos='fade-down' data-aos-delay="200">Cadastrar minha empresa</Link>
                     </div>
