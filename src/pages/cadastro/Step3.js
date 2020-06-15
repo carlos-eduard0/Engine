@@ -41,7 +41,7 @@ class Step3 extends Component {
                     </div>
                     <label>Endereço</label>
                     <BoxMaps onGetLatLng={onGetLatLng} ></BoxMaps>
-                    <label htmlFor="complemento" id="input-lado">UF</label>
+                    <label htmlFor="complemento" >Complemento</label>
                     <input
                             type="text"
                             name="complemento"
