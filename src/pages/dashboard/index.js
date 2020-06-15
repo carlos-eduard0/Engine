@@ -20,6 +20,7 @@ function Painel(){
                 Authorization: empresa_id,
             }
         }).then(response => {
+            console.log(response.data);
             setNome(response.data);
         })
     }, [empresa_id]);
