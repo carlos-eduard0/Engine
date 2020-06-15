@@ -63,7 +63,9 @@ export class Cadastro extends Component {
         console.log(latLng);
         const Array = latLng[1];
         console.log(Array);
-        const res = await api.post('/empresa', {
+        var res;
+        if(Array.length === 7){ 
+        res = await api.post('/empresa', {
             nome,
             senha,
             confirmar_senha,
@@ -89,6 +91,33 @@ export class Cadastro extends Component {
             conta,
             digito
         })
+        } else {
+            res = await api.post('/empresa', {
+                nome,
+                senha,
+                confirmar_senha,
+                nome_empresa,
+                email,
+                telefone,
+                cpf,
+                cnpj,
+                rg,
+                orgao_emissor,
+                cidade,
+                uf,
+                latitude:latLng[0].lat,
+                longitude:latLng[0].lng,
+                bairro:Array[2].long_name,
+                cep:Array[5].long_name,
+                numero:Array[0].long_name,
+                rua:Array[1].long_name,
+                complemento,
+                nome_banco,
+                agencia,
+                conta,
+                digito
+            })
+        }
         console.log(res.data.id);
         cookies.set('id', res.data.id);
         this.nextStep()
