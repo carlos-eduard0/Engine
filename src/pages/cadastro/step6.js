@@ -58,7 +58,7 @@ class Step6 extends Component {
           },
           {
             headers: {
-                Authorization: id_empresa,
+                authorization: id_empresa,
             }
           }
           ).then(response => {
