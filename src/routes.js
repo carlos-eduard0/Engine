@@ -25,20 +25,7 @@ const PrivateRoute = ({ component: Component, ... rest}) => ( // Cria uma rota p
     />
 );
 
-const LoginRoute = ({ component: Component, ... rest}) => (
-    <Route 
-        {... rest}
-        render={props =>
-            auth.user ? ( 
 
-                <Redirect to={{ pathname: "/painel", state: { from: props.location }}} />
-            ) : (
-
-                <Component {... props} />
-            )
-        }
-    />
-);
 
 
 
@@ -50,7 +37,7 @@ export default function Routes() {
             <Route path="/" exact component={Main} />
             <PrivateRoute path="/painel" component={Painel} />
             <Route path='/cadastro' component={Cadastro} />
-            <LoginRoute path='/login' component={Login} />
+            <Route path='/login' component={Login} />
             <Route path='/redefinir/senha' component={RedefinirSenha} />
             <Route path='/codigo/senha/:token' component={CodigoSenha} />
         </Router>
