@@ -24,6 +24,7 @@ function CodigoSenha() {
             if(response.data.message == 'link ta ok'){
                 setIdEmpresa(response.data.id);
                 if(senha == con_senha){
+                    alert(response.data.id);
                     api.post('/reset/password', {
                         id: response.data.id,
                         senha
@@ -42,6 +43,7 @@ function CodigoSenha() {
                     })
                 } else {
                     alert('as senhas precisam ser iguais');
+                    console.log(response.data.message);
                 }
             } else {
                 alert(response.data.message)
