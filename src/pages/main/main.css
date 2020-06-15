@@ -12,8 +12,20 @@
 }
 .main .content-main-itens{
     padding: 70px 0;
-    width: 70%;
+    width: 100%;
     text-align: left;
+    display: flex;
+    align-items: center;
+}
+.svgCarro{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 100px;
+  
+}
+.svgCarro img{
+    width: 700px;
 }
 
 .main .content-main-itens h1{
@@ -243,6 +255,13 @@
   }
 
 @media (max-width: 330px) {
+    .svgCarro{
+        display: none;
+      
+    }
+    .svgCarro img{
+        display: none;
+    }
     .main{
         overflow-y: hidden;
     }
@@ -255,6 +274,13 @@
         flex-direction: column;
         align-items: center;
     }
+    .main .content-main-itens{
+        padding: 70px 0;
+        width: 90%;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+    }
     .main .content-main-itens h1{
         font-size: 30px;
         height: 0;
@@ -265,7 +291,7 @@
         font-size: 12px;
         line-height: 1.25;
         width: 100%;
-        margin-top: 240px;
+        margin-top: 180px;
         height: 95px;
         padding: 0 0px;
     }
@@ -283,7 +309,7 @@
         font-size: 29px;
     }
     .main .section-vetor img{
-        width: 100%;
+        width: 280px;
         height: auto;
     }
     .main .section-vetor .texto-vetor{
@@ -412,6 +438,18 @@
       }
 }
 @media (min-width:330px) and (max-width: 768.98px) {
+    .main .content-main-itens{
+        padding: 70px 0;
+        width: 90%;
+        text-align: justify;
+    }
+    .svgCarro{
+        display: none;
+      
+    }
+    .svgCarro img{
+        display: none;
+    }
     .main{
         overflow-y: hidden;
     }
@@ -430,24 +468,26 @@
 }
 
 .main .content-main-itens h1{
-    font-size: 38px;
+    font-size: 26px;
     height: 0;
     padding: 0 0px;
     width: 100%;
     text-align: left;
 }
 .main .content-main-itens p{
-    font-size: 19px;
+    font-size: 18px;
     width: 100%;
-    margin-top: 290px;
-    height: 180px;
+    margin-top: 130px;
+    height: 140px;
     padding: 0 0px;
 }
 
 .main .content-main-itens a{
     margin-left: 0;
 }
-
+.main .section-vetor h2{
+    font-size: 25px;
+}
 .main .section-vetor{
     display: flex;
     flex-direction: column;
@@ -455,7 +495,7 @@
 
 }
 .main .section-vetor img{
-    width: 100%;
+    width: 300px;
     height: auto;
 }
 .main .section-vetor .texto-vetor{
@@ -589,6 +629,18 @@
   }
 }
 @media (min-width: 330px) and (max-width:768px) and (orientation: landscape) {
+    .main .content-main-itens{
+        padding: 70px 0;
+        width: 70%;
+        text-align: left;
+    }
+    .svgCarro{
+        display: none;
+      
+    }
+    .svgCarro img{
+        display: none;
+    }
     .main{
         overflow-y: hidden;
     }
@@ -628,6 +680,18 @@
 
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
+    .main .content-main-itens{
+        padding: 70px 0;
+        width: 90%;
+        text-align: left;
+    }
+    .svgCarro{
+        display: none;
+      
+    }
+    .svgCarro img{
+        display: none;
+    }
     .main{
         overflow-y: hidden;
     }
@@ -815,6 +879,18 @@
       }
 }
 @media (min-width: 768px) and (max-width: 991.98px) and (orientation: landscape) {
+    .main .content-main-itens{
+        padding: 70px 0;
+        width: 70%;
+        text-align: left;
+    }
+    .svgCarro{
+        display: none;
+      
+    }
+    .svgCarro img{
+        display: none;
+    }
     .main{
         overflow-y: hidden;
     }
@@ -833,7 +909,55 @@
     }
 
 }
-@media (min-width:1800px){
+@media (min-width: 991.98px) and (max-width: 1799px) {
+    .main .content-main-itens h1{
+        color: #fff;
+        font-size: 50px;
+        font-weight: 600;
+        height: 210px;
+        padding: 0 80px;
+        width: 100%;
+    }
+    .main .content-main-itens p{
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.25;
+        width: 75%;
+        height: 112px;
+        padding: 0 80px;
+    }
+    .svgCarro{
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        top: 200px;
+      
+    }
+    .svgCarro img{
+        width: 500px;
+    }
+    
+.main .content-main-itens a{
+    background: #fff;
+    padding: 14px 22px;
+    border-radius: 290486px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(60, 62, 65);
+    font-weight: 600;
+    margin-left: 75px;
+}
+.main .itens{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    margin: 0 85px;
+}
+    
+}
+@media (min-width: 1800px) {
     .main .content-main-itens h1{
         padding: 0 281px;
     }
@@ -920,4 +1044,16 @@
         padding: 0 480px;
         align-items: center;
       }
+
+    .svgCarro{
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        top: 200px;
+      
+    }
+    .svgCarro img{
+        width: 500px;
+    }
+    
 }
