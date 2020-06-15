@@ -27,9 +27,7 @@ function Login() {
 
             cookies.set('id', res.data, {path:'/painel'}); // Coloca os dados do user no cookie
 
-            setTimeout(function(){ 
-                history.push('/painel'); 
-            }, 1500);
+            window.location.reload();
         } catch (err){
             alert('usuário ou senha incorreta');
         }

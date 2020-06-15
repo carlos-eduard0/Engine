@@ -25,15 +25,16 @@ const PrivateRoute = ({ component: Component, ... rest}) => ( // Cria uma rota p
     />
 );
 
-const TesteRoute = ({ component: Component, ... rest}) => ( // Cria uma rota privada
-    <Route //Essa rota é uma rota normal, que renderiza um componente a ser informado dps...
+const LoginRoute = ({ component: Component, ... rest}) => (
+    <Route 
         {... rest}
         render={props =>
-            auth.check_auth() ? ( //... a diferença é que, se auth.authenticated for verdadeiro, ou seja, se tiver um use logado nos cookis, ...
+            auth.check_auth() ? ( 
 
-                <Component {... props} /> // ... ele renderiza normal
-            ) : ( // Se não, volta para a pagina inicial
                 <Redirect to={{ pathname: "/painel", state: { from: props.location }}} />
+            ) : 
+
+                <Component {... props} />
             )
         }
     />
@@ -48,9 +49,8 @@ export default function Routes() {
         <Router>
             <Route path="/" exact component={Main} />
             <PrivateRoute path="/painel" component={Painel} />
-            <TesteRoute path="/logado" component={Login} />
             <Route path='/cadastro' component={Cadastro} />
-            <Route path='/login' component={Login} />
+            <LoginRoute path='/login' component={Login} />
             <Route path='/redefinir/senha' component={RedefinirSenha} />
             <Route path='/codigo/senha/:token' component={CodigoSenha} />
         </Router>
