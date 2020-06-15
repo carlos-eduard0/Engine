@@ -91,7 +91,6 @@ export class Cadastro extends Component {
         })
         console.log(res.data.id);
         cookies.set('id', res.data.id);
-        localStorage('id', res.data.id)
         this.nextStep()
         //TESTE //ok
         try {
