@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import usePlacesAutocomplete from "use-places-autocomplete";
 import {
   geocodeByAddress,
@@ -15,7 +15,17 @@ import {
 
 import "@reach/combobox/styles.css";
 
+const [InitialPosition ,setInitialPosition] = useState<[number, number]>([0, 0]);
+
 const PlacesAutoComplete = ({ onGetLatLng }) => {
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(position => {
+      const { latitude, longitude } = position.coords;
+
+      setInitialPosition([latitude, longitude]);
+    })
+  }, [])
+  
   const {
     ready,
     value,
@@ -45,7 +55,13 @@ const PlacesAutoComplete = ({ onGetLatLng }) => {
   };
   return (
     <Combobox onSelect={handleSelect} aria-labelledby="demo">
-      <ComboboxInput value={value} onChange={handleInput} disabled={!ready} className="inputEnd" />
+      <ComboboxInput value={value} onChange={handleInput} disabled={!ready} className="inputEnd" query={{
+        language:'pt-br',
+        location: `${InitialPosition}`,
+        radius: '150000',
+        components: 'country:mx',
+        strinctbounds: true,
+      }} />
       <ComboboxPopover>
         <ComboboxList>
 

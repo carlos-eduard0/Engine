@@ -1,49 +1,11 @@
 import React, { Component } from 'react';
 import BoxMaps from '../PesquisaMaps/index';
-import Upload from '../uploadImagem/index';
-import FileList from '../FileList/index';
-import filesize from 'filesize';
 
-var data;
 class Step3 extends Component {
     continue = e => {
         e.preventDefault();
        
         this.props.nextStep();
-    }
-
-    state = {
-        uploadedFiles: [],
-    }
-
-    handleUpload = files => {
-        const uploadedFiles = files.map(file => ({
-            file,
-            id: file.name,
-            name: file.name,
-            readableSize: filesize(file.size),
-            preview: URL.createObjectURL(file),
-            progress: 0,
-            uploaded: false,
-            error: false,
-            url: null,
-        }))
-        this.setState({
-            uploadedFiles
-        });
-
-        data = {uploadedFiles};
-        console.log(data);
-        uploadedFiles.forEach(this.processUpload);
-
-    };
-
-    processUpload = (uploadedFile) => {
-        const data = new FormData();
-
-        data.append('file', uploadedFile.file, uploadedFile.name);
-         
-    
     }
 
 
@@ -52,7 +14,6 @@ class Step3 extends Component {
         this.props.prevStep();
     }
     render() {
-        const { uploadedFiles } = this.state;
         const { cidade, uf, handleChange, onGetLatLng, complemento  } = this.props;
         return (
             <div className="form">
