@@ -50,7 +50,7 @@ class Step6 extends Component {
         api.post('/empresaLogo', data,
         {
           headers: {
-              Authorization: id_empresa,
+            authorization: id_empresa,
           }
         } ,{
             onUploadProgress: e => {
