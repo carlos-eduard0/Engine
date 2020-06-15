@@ -26,8 +26,6 @@ function Login() {
             const res = await api.post('/sessions', data);
 
             cookies.set('id', res.data, {path:'/painel'}); // Coloca os dados do user no cookie
-
-            // window.location.reload();
         } catch (err){
             alert('usuário ou senha incorreta');
         }
