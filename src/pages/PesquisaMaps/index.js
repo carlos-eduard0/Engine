@@ -66,7 +66,7 @@ const PlacesAutoComplete = ({ onGetLatLng }) => {
   };
   return (
     <Combobox onSelect={handleSelect} aria-labelledby="demo">
-      <ComboboxInput value={!!value && coordinates} onChange={handleInput} disabled={!ready} className="inputEnd" />
+      <ComboboxInput value={value} onChange={handleInput} disabled={!ready} className="inputEnd" />
       <ComboboxPopover>
         <ComboboxList>
 

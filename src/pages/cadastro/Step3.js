@@ -60,8 +60,3 @@ class Step3 extends Component {
     }
 }
 export default Step3;
-
-/*
-    <Upload onUpload={this.handleUpload} />
-    {!!uploadedFiles.length && (<FileList files={uploadedFiles} onDelete={this.handleDelete} />)}
-*/
