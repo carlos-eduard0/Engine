@@ -27,7 +27,7 @@ function CodigoSenha() {
                     alert(response.data.id);
                     api.post('/reset/password', {
                         id: response.data.id,
-                        senha
+                        senha:senha
                     })
                     .then(response => {
                         console.log(response.data);
