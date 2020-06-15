@@ -58,12 +58,7 @@ class Step6 extends Component {
               uploaded:true,
               id: response.data._id,
               url: response.data.url
-            }),
-            {
-              headers: {
-                  Authorization: id_empresa,
-              }
-            }
+            })
           })
           .catch(() => {
             this.updateFile(uploadedFile.id, {
@@ -71,7 +66,11 @@ class Step6 extends Component {
             });
           });
     };
-
+    // {
+    //   headers: {
+    //       Authorization: id_empresa,
+    //   }
+    // }
     
 
     render() {

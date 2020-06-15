@@ -1,10 +1,11 @@
 import React from 'react';
 import './main.css'
 import vetor from '../../img/userEngineW.svg';
-import icone1 from '../../img/icone1.svg'
-import icone2 from '../../img/icone2.svg'
-import icone3 from '../../img/icone3.svg'
-import logoEngine from '../../img/logoEngine.png'
+import icone1 from '../../img/icone1.svg';
+import icone2 from '../../img/icone2.svg';
+import icone3 from '../../img/icone3.svg';
+import logoEngine from '../../img/logoEngine.png';
+import SvgCarro from '../../img/svgCarro.svg';
 import { Link } from 'react-router-dom';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -32,7 +33,11 @@ function Content() {
                         <p data-aos='fade-down' data-aos-delay="100">Aproveite os beneficios da Engine e veja seu negócio girar como um motor, aumente suas vendas e apareça para seus clientes de forma simples e intuitiva!</p>
                         <Link to={'/cadastro'} data-aos='fade-down' data-aos-delay="200">Cadastrar minha empresa</Link>
                     </div>
+                    <div className="svgCarro">
+                        <img src={SvgCarro} alt="" />
+                    </div>
                 </div>
+
             </div>
             <section className="main-section">
                 <div className="section-vetor">
