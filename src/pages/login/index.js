@@ -27,7 +27,7 @@ function Login() {
 
             cookies.set('id', res.data, {path:'/painel'}); // Coloca os dados do user no cookie
 
-            // window.location.reload();
+            window.location.reload();
         } catch (err){
             alert('usuário ou senha incorreta');
         }

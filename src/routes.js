@@ -29,7 +29,7 @@ const LoginRoute = ({ component: Component, ... rest}) => (
     <Route 
         {... rest}
         render={props =>
-            auth.check_auth() ? ( 
+            auth.user ? ( 
 
                 <Redirect to={{ pathname: "/painel", state: { from: props.location }}} />
             ) : 
