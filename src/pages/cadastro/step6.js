@@ -47,7 +47,7 @@ class Step6 extends Component {
         const id_empresa = cookies.get('id');
 
         data.append("file", uploadedFile.file, uploadedFile.name, uploadedFile.key );
-        api.post('/empresaLogo', data, {
+        api.post(`/empresaLogo${id_empresa}`, data, {
             onUploadProgress: e => {
               const progress = parseInt(Math.round((e.loaded * 100) / e.total));
     
@@ -55,13 +55,7 @@ class Step6 extends Component {
                 progress
               })
             }
-          },
-          {
-            headers: {
-                authorization: id_empresa,
-            }
-          }
-          ).then(response => {
+          }).then(response => {
             this.updateFile(uploadedFile.id, {
               uploaded:true,
               id: response.data._id,
