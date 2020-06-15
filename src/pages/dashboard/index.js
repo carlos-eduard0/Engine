@@ -24,7 +24,7 @@ function Painel(){
             setNome(response.data);
         })
     }, []);
-//OKC
+//OKCl
 
     return(
        <div className="body-main">
