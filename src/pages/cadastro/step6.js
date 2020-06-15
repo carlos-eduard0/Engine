@@ -72,7 +72,7 @@ class Step6 extends Component {
               error:true
             });
           });
-    };
+    };  
 
     
 
