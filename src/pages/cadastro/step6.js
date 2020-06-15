@@ -44,7 +44,7 @@ class Step6 extends Component {
         const cookies = new Cookies();
         const data = new FormData();
 
-        const id_empresa = cookies.get('id');
+        const id_empresa = localStorage.get('id');
 
         data.append("file", uploadedFile.file, uploadedFile.name, uploadedFile.key );
         api.post('/empresaLogo', data,
