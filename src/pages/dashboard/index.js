@@ -15,15 +15,15 @@ function Painel(){
     const empresa_id = cookies.get('id');
 
     useEffect(() => {
-        api.get('/header', {
+        api.get('/empresa', {
             headers: {
                 Authorization: empresa_id,
             }
         }).then(response => {
-            console.log(response.data.empresa.nome_empresa);
+            console.log(response.data);
             setNome(response.data);
         })
-    }, [empresa_id]);
+    }, []);
 
 
     return(
@@ -32,7 +32,7 @@ function Painel(){
                 
                 <header className="header-content">
                     <h3>DASHBOARD</h3>
-                        <span><img src={nome[1].url} className="iconU"></img>{nome[0].nome_empresa}</span> 
+                        <span><AccountCircleIcon/>{nome.nome_empresa}</span>
                 </header>
                 <div className="content-menu">
                     <nav>

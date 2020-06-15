@@ -21,7 +21,7 @@ function Service() {
     const empresaId = cookies.get('id');
 
     useEffect(() => {
-        api.get('empresa', {
+        api.get('/empresa', {
             headers: {
                 Authorization: empresaId,
             }
@@ -37,14 +37,14 @@ function Service() {
     const [servicos, setServicos] = useState([]);
 
     useEffect(() => {
-        api.get('servicos/empresa', {
+        api.get('/servicos/empresa', {
             headers: {
                 Authorization: empresaId,
             }
         }).then(response => {
             setServicos(response.data);
         })
-    }, [empresaId]);
+    }, []);
 
 
     async function handleDeleteServico(id){
