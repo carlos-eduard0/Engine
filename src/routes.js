@@ -11,14 +11,14 @@ import CodigoSenha from './pages/codigoSenha';
 
 export default function Routes() {
     const check = () => {
-        var user = cookies.get('id');
-        const cookies = new Cookies();
+        // var user = cookies.get('id');
+        // const cookies = new Cookies();
 
-        if(user){
-            return true;
-        } else {
-            return false;
-        }
+        // if(user){
+        //     return true;
+        // } else {
+        //     return false;
+        // }
     }
 
     const PrivateRoute = ({ component: Component, ... rest}) => ( 

@@ -18,7 +18,8 @@ import Swal from 'sweetalert2';
 export class Cadastro extends Component {
     state = {
         step: 1,
-
+        loading: false,
+        loading2: false,
         // step 1
         nome: '',
         email: '',
@@ -36,10 +37,10 @@ export class Cadastro extends Component {
         latLng: '',
         rua: '',
         nome_empresa: '',
-        estado:'',
-        bairro:'',
-        cep:'',
-        numero:'',
+        estado: '',
+        bairro: '',
+        cep: '',
+        numero: '',
 
 
         //step 5
@@ -47,6 +48,7 @@ export class Cadastro extends Component {
         confirmar_senha: '',
     }
     addempresa = async () => {
+        this.setState({loading:true})
         const cookies = new Cookies();
         const Toast = Swal.mixin({
             toast: true,
@@ -88,13 +90,30 @@ export class Cadastro extends Component {
                 cookies.set('id', res.data.id);
                 this.nextStep()
             }
-            if (res.data.message === 'senhas não conferem') {
+             if (res.data.message === 'Empresa ja cadastrada') {
+                this.setState({loading:false})
                 Toast.fire({
                     icon: 'error',
-                    title: 'Verifique suas senhas novamente, elas não batem!'
+                    title: 'Empresa já cadastrada'
+                })
+            }
+             if (res.data.message === 'senhas não conferem') {
+                this.setState({loading:false})
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Senhas não correspondentes'
+                })
+            }
+
+            if (res.data.message === 'senhas muito curta') {
+                this.setState({loading:false})
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Senha muito curta, minimo 8'
                 })
             }
         } catch (error) {
+            this.setState({loading:false})
             Toast.fire({
                 icon: 'error',
                 title: 'Erro nosso, tente atualizar a página'
@@ -102,6 +121,7 @@ export class Cadastro extends Component {
         }
     }
     redLogin = () => {
+        this.setState({loading2:true})
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -113,12 +133,13 @@ export class Cadastro extends Component {
                 toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
         })
+        this.setState({loading2:false})
         Toast.fire({
             icon: 'success',
             title: 'Empresa cadastrada, bem vindo!',
         })
-    
-        setTimeout(function(){ 
+
+        setTimeout(function () {
             window.location.replace("https://engine-company.com/login");
         }, 3000);
     }
@@ -173,7 +194,7 @@ export class Cadastro extends Component {
 
 
     showStep = () => {
-        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, complemento, cidade, rua, cep, bairro, numero, estado, senha, confirmar_senha } = this.state;
+        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, complemento, cidade, rua, cep, bairro, numero, estado, senha, confirmar_senha, loading, loading2 } = this.state;
 
         if (step === 1)
             return (<Step1
@@ -211,7 +232,7 @@ export class Cadastro extends Component {
                 nome_empresa={nome_empresa}
             />);
 
-    
+
 
         else if (step === 4)
             return (<Step5
@@ -220,10 +241,12 @@ export class Cadastro extends Component {
                 handleChange={this.handleChange}
                 senha={senha}
                 confirmar_senha={confirmar_senha}
+                loading={loading}
             />);
 
         else if (step === 5)
             return (<Step6
+                loading={loading2}
                 redLogin={this.redLogin}
             />);
     }

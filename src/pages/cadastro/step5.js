@@ -10,11 +10,11 @@ class Step5 extends Component {
         this.props.prevStep();
     }
     render() {
-        const { senha, confirmar_senha, handleChange } = this.props;
+        const { senha, confirmar_senha, handleChange, loading } = this.props;
         return (
             <div className="form"  >
                 <strong>Configure uma senha</strong>
-                <form action="submit" onSubmit={this.continue}>
+                <form>
                     <label htmlFor="senha">Senha</label>
                     <input
                         type="password"
@@ -33,7 +33,7 @@ class Step5 extends Component {
                     />
                     <div className="button-group">
                         <button id="prev" onClick={this.back}>voltar</button>
-                        <button type="submit" id="next">Próximo</button>
+                        <button onClick={this.continue} id="next" disabled={loading}> {loading && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize:16 }}/>}<span id="prox">Próximo</span></button>
                     </div>
                 </form>
             </div>

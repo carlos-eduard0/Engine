@@ -77,14 +77,15 @@ class Step6 extends Component {
 
 
   render() {
+    const {loading2 } = this.props;
     const { uploadedFiles } = this.state;
     return (
       <div className="form" >
         <strong>Logo da empresa</strong>
-        <form action="submit" onSubmit={this.continue}>
+        <form>
           <Upload onUpload={this.handleUpload} />
           {!!uploadedFiles.length && (<FileList files={uploadedFiles} onDelete={this.handleDelete} />)}
-          <button type="submit" id="next">Próximo</button>
+          <button onClick={this.continue} id="next" disabled={loading2}> {loading2 && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize:16 }}/>}<span id="prox">Próximo</span></button>
         </form>
       </div>
     );
