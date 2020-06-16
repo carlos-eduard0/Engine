@@ -44,7 +44,7 @@ export default function Routes() {
 
         <Router>
             <Route path="/" exact component={Main} />
-            <Route path="/painel" component={Painel} />
+            <PrivateRoute path="/painel" component={Painel} />
             <Route path='/cadastro' component={Cadastro} />
             <Route path='/login' component={Login} />
             <Route path='/redefinir/senha' component={RedefinirSenha} />
