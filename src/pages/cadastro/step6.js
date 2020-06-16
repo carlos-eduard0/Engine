@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import filesize from 'filesize';
+import {uniqueId} from 'lodash'
 import Cookies from 'universal-cookie';
 
 import api from '../../services/api';
@@ -9,17 +10,14 @@ import './form.css'
 class Step6 extends Component {
 
   state = {
-    uploadedFiles: [],
+    uploadedFiles: {},
+    data: [],
   }
-  continue = e => {
-    e.preventDefault();
-    this.props.redLogin();
-}
   handleUpload = files => {
     console.log(files)
     const uploadedFiles = files.map(file => ({
       file,
-      id: file.name,
+      id: uniqueId(),
       name: file.name,
       key: file.key,
       readableSize: filesize(file.size),
@@ -45,33 +43,42 @@ class Step6 extends Component {
     })
   };
 
-  processUpload = (uploadedFile) => {
+  Upload = e => {
+    e.preventDefault();
+    const { data, uploadedFiles } = this.state;
     const cookies = new Cookies();
-    const data = new FormData();
-
     const id_empresa = cookies.get('id');
-
-    data.append("file", uploadedFile.file, uploadedFile.name, uploadedFile.key);
+    
     api.post(`/empresaLogo/${id_empresa}`, data, {
       onUploadProgress: e => {
         const progress = parseInt(Math.round((e.loaded * 100) / e.total));
 
-        this.updateFile(uploadedFile.id, {
+        this.updateFile(uploadedFiles[0].id, {
           progress
         })
       }
     }).then(response => {
-      this.updateFile(uploadedFile.id, {
+      this.updateFile(uploadedFiles[0].id, {
         uploaded: true,
         id: response.data._id,
         url: response.data.url
       })
     })
       .catch(() => {
-        this.updateFile(uploadedFile.id, {
+        this.updateFile(uploadedFiles[0].id, {
           error: true
         });
       });
+      this.props.redLogin();
+  }
+
+  processUpload = (uploadedFile) => {
+    const data = new FormData();
+
+    data.append("file", uploadedFile.file, uploadedFile.name, uploadedFile.key);
+    this.setState({
+      data
+    });
   };
 
 
@@ -85,7 +92,7 @@ class Step6 extends Component {
         <form>
           <Upload onUpload={this.handleUpload} />
           {!!uploadedFiles.length && (<FileList files={uploadedFiles} onDelete={this.handleDelete} />)}
-          <button onClick={this.continue} id="next" disabled={loading2}> {loading2 && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize:16 }}/>}<span id="prox">Próximo</span></button>
+          <button onClick={this.Upload} id="next" disabled={loading2}> {loading2 && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize:16 }}/>}<span id="prox">Próximo</span></button>
         </form>
       </div>
     );
