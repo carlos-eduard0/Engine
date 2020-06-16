@@ -25,7 +25,7 @@ function Login() {
         try{
             await api.post('/sessions', data)
             .then(response => {
-                cookies.set('id', res.data, {path:'/painel'});
+                cookies.set('id', response.data, {path:'/painel'});
             })
             .then(setTimeout(function(){ 
                 history.push('/painel'); 
