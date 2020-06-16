@@ -10,9 +10,10 @@ import RedefinirSenha from './pages/redefinirSenha';
 import CodigoSenha from './pages/codigoSenha';
 
 export default function Routes() {
+    const cookies = new Cookies();
+
     const check = () => {
-        var user = cookies.get('id');
-        const cookies = new Cookies();
+        const user = cookies.get('id');
 
         if(user){
             return true;
