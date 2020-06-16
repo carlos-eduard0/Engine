@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-// import auth from './services/auth'; 
-import Cookies from 'universal-cookie'; 
+import auth from './services/auth'; 
 
 import Main from './pages/main';
 import Painel from './pages/painel';
@@ -10,41 +9,27 @@ import Login from './pages/login';
 import RedefinirSenha from './pages/redefinirSenha';
 import CodigoSenha from './pages/codigoSenha';
 
+auth.check_auth();
+
+const PrivateRoute = ({ component: Component, ... rest}) => ( // Cria uma rota privada
+    <Route //Essa rota é uma rota normal, que renderiza um componente a ser informado dps...
+        {... rest}
+        render={props =>
+            auth.user ? ( //... a diferença é que, se auth.authenticated for verdadeiro, ou seja, se tiver um use logado nos cookis, ...
+
+                <Component {... props} /> // ... ele renderiza normal
+            ) : ( // Se não, volta para a pagina inicial
+                <Redirect to={{ pathname: "/", state: { from: props.location }}} />
+            )
+        }
+    />
+);
+
+
+
+
 
 export default function Routes() {
-
-    const cookies = new Cookies();
-
-    const [auth, setAuth] = useState(false);
-
-    const check = () => {
-        const user = cookies.get('id');
-
-        if(user){
-            setAuth(true);
-        } else {
-            setAuth(false);
-        }
-    }
-
-    const PrivateRoute = ({ component: Component, ... rest}) => ( 
-        <Route 
-            {... rest}
-            render={props =>
-                auth ? ( 
-
-                    <Component {... props} /> 
-                ) : ( 
-                    <Redirect to={{ pathname: "/", state: { from: props.location }}} />
-                )
-            }
-        />
-    );
-    
-    useEffect(() => {
-        check();
-    }, []);
-
     return (
 
         <Router>
