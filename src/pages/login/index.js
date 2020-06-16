@@ -23,13 +23,14 @@ function Login() {
         };
 
         try{
-            const res = await api.post('/sessions', data);
-
-            cookies.set('id', res.data, {path:'/painel'}); // Coloca os dados do user no cookie
-
-            setTimeout(function(){ 
+            await api.post('/sessions', data)
+            .then(response => {
+                cookies.set('id', res.data, {path:'/painel'});
+            })
+            .then(setTimeout(function(){ 
                 history.push('/painel'); 
-            }, 1500);
+            }, 1500));
+
         } catch (err){
             alert('usuário ou senha incorreta');
         }
