@@ -51,7 +51,7 @@ function Login() {
                         <label htmlFor="senha">Senha</label>
                         <input type="password" value={senha} onChange={e => setSenha(e.target.value)} id="senha" required />
 
-                        <button type="submit" id="btnloginr" disabled={loading}> {loading && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize:16 }}/>}<span id="prox">Loginn</span></button>
+                        <button type="submit" id="btnloginr" disabled={loading}> {loading && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize:16 }}/>}<span id="prox">Login</span></button>
                     </form>
                 </div>
                 <div className="footer-text">
