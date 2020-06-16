@@ -10,8 +10,11 @@ import Login from './pages/login';
 import RedefinirSenha from './pages/redefinirSenha';
 import CodigoSenha from './pages/codigoSenha';
 
+
+const cookies = new Cookies();
+
+
 export default function Routes() {
-    const cookies = new Cookies();
 
     const check = () => {
         const user = cookies.get('id');
@@ -19,7 +22,7 @@ export default function Routes() {
         if(user){
             return true;
         } else {
-            return false;
+            return true;
         }
     }
 
