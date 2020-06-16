@@ -12,7 +12,7 @@ class Step5 extends Component {
     render() {
         const { senha, confirmar_senha, handleChange, loading } = this.props;
         return (
-            <div className="form"  >
+            <div className="form">
                 <strong>Configure uma senha</strong>
                 <form>
                     <label htmlFor="senha">Senha</label>
