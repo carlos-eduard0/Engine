@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Cookies from 'universal-cookie';
 import api from '../../services/api';
-import {useHistory, Redirect} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 import './styles.css';
 import logobranca from '../../img/logo-branca.png';
