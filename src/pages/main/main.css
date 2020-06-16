@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&display=swap');
 .main{
     overflow-y: hidden;
 }
@@ -282,8 +283,8 @@
         flex-direction: column;
     }
     .main .content-main-itens h1{
-        font-size: 30px;
-        height: 0;
+        font-size: 20px;
+        height: 0px;
         padding: 0 0px;
         width: 100%;
     }
@@ -291,7 +292,7 @@
         font-size: 12px;
         line-height: 1.25;
         width: 100%;
-        margin-top: 180px;
+        margin-top: 110px;
         height: 95px;
         padding: 0 0px;
     }
@@ -477,7 +478,7 @@
 .main .content-main-itens p{
     font-size: 18px;
     width: 100%;
-    margin-top: 130px;
+    margin-top: 170px;
     height: 140px;
     padding: 0 0px;
 }
@@ -1063,7 +1064,7 @@
     .main .content-main-itens h1{
         padding: 0 400px;
         font-size: 58px;
-        height: 170px;
+        height: 230px;
     }
     .main .content-main-itens p{
         padding: 0 400px;
