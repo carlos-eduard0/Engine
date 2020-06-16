@@ -12,10 +12,12 @@ function Login() {
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [loading, setLoading] = useState(false);
 
 
     async function handleLogin(e){
         e.preventDefault();
+        setLoading(true)
 
         const data = {
             email,
@@ -49,7 +51,7 @@ function Login() {
                         <label htmlFor="senha">Senha</label>
                         <input type="password" value={senha} onChange={e => setSenha(e.target.value)} id="senha" required />
 
-                        <button>Login</button>
+                        <button type="submit" id="btnloginr" disabled={loading}> {loading && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize:16 }}/>}<span id="prox">Login</span></button>
                     </form>
                 </div>
                 <div className="footer-text">
