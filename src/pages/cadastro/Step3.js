@@ -4,7 +4,7 @@ import BoxMaps from '../PesquisaMaps/index';
 class Step3 extends Component {
     continue = e => {
         e.preventDefault();
-       
+
         this.props.nextStep();
     }
 
@@ -14,42 +14,88 @@ class Step3 extends Component {
         this.props.prevStep();
     }
     render() {
-        const { cidade, uf, handleChange, onGetLatLng, complemento  } = this.props;
+        const { cidade, cep, rua, bairro, numero, estado, handleChange, onGetLatLng, complemento, nome_empresa} = this.props;
         return (
-            <div className="form">
-                <strong>Endereço da Empresa</strong>
+            <div className="form step3">
+                <strong>Dados da empresa</strong>
                 <form action="submit" onSubmit={this.continue}>
-                    <div className="input-group">
-                        <label htmlFor="cidade">Cidade</label>
-                        <input
-                            type="text"
-                            name="cidade"
-                            value={cidade}
-                            onChange={handleChange('cidade')}
-                            required
-                        />
 
-                        <label htmlFor="uf" id="input-lado">UF</label>
-                        <input
-                            type="text"
-                            name="uf"
-                            value={uf}
-                            onChange={handleChange('uf')}
-                            required
-                            style={{ width: 58 }}
-                        />
-                    </div>
                     <label>Endereço</label>
-                    <BoxMaps onGetLatLng={onGetLatLng} ></BoxMaps>
-                    <label htmlFor="complemento" >Complemento</label>
+                    <BoxMaps onGetLatLng={onGetLatLng}></BoxMaps>
+
+                    <label htmlFor="">Nome da empresa</label>
                     <input
-                            type="text"
-                            name="complemento"
-                            value={complemento}
-                            onChange={handleChange('complemento')}
-                            required
-                            style={{ width: 58 }}
-                        />
+                        type="text"
+                        name="nomeEmpresa"
+                        defaultValue={nome_empresa}
+                        onChange={handleChange('nome_empresa')}
+                        required
+                    />
+
+                    <label htmlFor="">CEP</label>
+                    <input
+                        type="text"
+                        name="cep"
+                        defaultValue={cep}
+                        onChange={handleChange('cep')}
+                        required
+                    />
+                    
+
+                    <label htmlFor="">Rua</label>
+                    <input
+                        type="text"
+                        name="rua"
+                        defaultValue={rua}
+                        onChange={handleChange('rua')}
+                        required
+                    />
+
+                    <label htmlFor="">Bairro</label>
+                    <input
+                        type="text"
+                        name="bairro"
+                        defaultValue={bairro}
+                        onChange={handleChange('bairro')}
+                        required
+                    />
+
+                    <label htmlFor="">Complemento</label>
+                    <input
+                        type="text"
+                        name="complemento"
+                        defaultValue={complemento}
+                        onChange={handleChange('complemento')}
+                        required
+                    />
+
+                    <label htmlFor="">Número</label>
+                    <input
+                        type="text"
+                        name="numero"
+                        defaultValue={numero}
+                        onChange={handleChange('numero')}
+                        required
+                    />
+
+                    <label htmlFor="">Estado</label>
+                    <input
+                        type="text"
+                        name="estado"
+                        defaultValue={estado}
+                        onChange={handleChange('estado')}
+                        required
+                    />
+
+                    <label htmlFor="">Cidade</label>
+                    <input
+                        type="text"
+                        name="cidade"
+                        defaultValue={cidade}
+                        onChange={handleChange('cidade')}
+                        required
+                    />
+
                     <div className="button-group">
                         <button id="prev" onClick={this.back}>voltar</button>
                         <button type="submit" id="next">próximo</button>

@@ -49,10 +49,10 @@ class Step2 extends Component {
         this.props.prevStep();
     }
     render() {
-        const { cpf, cnpj, rg, orgao_emissor, handleChange } = this.props;
+        const { cpf, rg, orgao_emissor, handleChange, cnpj } = this.props;
         return (
             <div className="form" >
-                <strong>Sobre o dono da empresa</strong>
+                <strong>Dados Pessoais</strong>
                 <form action="submit" onSubmit={this.continue}>
                     <label htmlFor="cpf">CPF</label>
                     <input

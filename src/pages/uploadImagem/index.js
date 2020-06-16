@@ -9,7 +9,7 @@ class Upload extends Component {
 
     renderDragMessage = (isDragActive, isDragReject) => {
     if(!isDragActive){
-      return <UploadMessage>Coloque a imagem de sua empresa aqui.</UploadMessage>
+      return <UploadMessage>Clique para inserir a logo da sua empresa .</UploadMessage>
     }
 
     if(isDragReject){

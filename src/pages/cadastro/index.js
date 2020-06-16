@@ -12,7 +12,8 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import api from '../../services/api';
-import Swal from 'sweetalert2'; 
+import Swal from 'sweetalert2';
+
 
 export class Cadastro extends Component {
     state = {
@@ -20,7 +21,6 @@ export class Cadastro extends Component {
 
         // step 1
         nome: '',
-        nome_empresa: '',
         email: '',
         telefone: '',
 
@@ -32,15 +32,15 @@ export class Cadastro extends Component {
 
         //step 3
         cidade: '',
-        uf: '',
         complemento: '',
         latLng: '',
+        rua: '',
+        nome_empresa: '',
+        estado:'',
+        bairro:'',
+        cep:'',
+        numero:'',
 
-        //step 4
-        nome_banco: '',
-        agencia: '',
-        conta: '',
-        digito: '',
 
         //step 5
         senha: '',
@@ -59,13 +59,9 @@ export class Cadastro extends Component {
                 toast.addEventListener('mouseleave', Swal.resumeTimer)
             }
         })
-        const { nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cidade, uf, latLng, complemento, nome_banco, agencia, conta, digito, senha, confirmar_senha } = this.state;
-        console.log(latLng);
-        const Array = latLng[1];
-        console.log(Array);
-        var res;
-        if(Array.length === 7){ 
-        res = await api.post('/empresa', {
+        const { nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, cidade, latLng, complemento, senha, confirmar_senha, bairro, cep, numero, rua, estado } = this.state;
+
+        const res = await api.post('/empresa', {
             nome,
             senha,
             confirmar_senha,
@@ -77,57 +73,20 @@ export class Cadastro extends Component {
             rg,
             orgao_emissor,
             cidade,
-            uf,
-            latitude:latLng[0].lat,
-            longitude:latLng[0].lng,
-            bairro:Array[2].long_name,
-            cep:Array[6].long_name,
-            numero:Array[0].long_name,
-            rua:Array[1].long_name,
+            latitude: latLng.lat,
+            longitude: latLng.lng,
+            bairro,
+            cep,
+            numero,
+            rua,
             complemento,
-            bairro:Array[2].long_name,
-            nome_banco,
-            agencia,
-            conta,
-            digito
+            bairro,
+            estado,
         })
-        } else {
-            res = await api.post('/empresa', {
-                nome,
-                senha,
-                confirmar_senha,
-                nome_empresa,
-                email,
-                telefone,
-                cpf,
-                cnpj,
-                rg,
-                orgao_emissor,
-                cidade,
-                uf,
-                latitude:latLng[0].lat,
-                longitude:latLng[0].lng,
-                bairro:Array[2].long_name,
-                cep:Array[5].long_name,
-                numero:Array[0].long_name,
-                rua:Array[1].long_name,
-                complemento,
-                nome_banco,
-                agencia,
-                conta,
-                digito
-            })
-        }
-        console.log(res.data.id);
-        cookies.set('id', res.data.id);
-        this.nextStep()
-        //TESTE //ok
         try {
-            if (res.data) {
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Empresa cadastrada com sucesso!'
-                })
+            if (res.data.message === 'cadastrado') {
+                cookies.set('id', res.data.id);
+                this.nextStep()
             }
             if (res.data.message === 'senhas não conferem') {
                 Toast.fire({
@@ -141,6 +100,27 @@ export class Cadastro extends Component {
                 title: 'Erro nosso, tente atualizar a página'
             })
         }
+    }
+    redLogin = () => {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            onOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+        Toast.fire({
+            icon: 'success',
+            title: 'Empresa cadastrada, bem vindo!',
+        })
+    
+        setTimeout(function(){ 
+            window.location.replace("https://engine-company.com/login");
+        }, 3000);
     }
     nextStep = () => {
         const { step } = this.state;
@@ -158,19 +138,48 @@ export class Cadastro extends Component {
     handleChange = input => e => {
         this.setState({ [input]: e.target.value });
     }
-    onGetLatLng = (latLng, results) =>{
-        this.setState({latLng, results})
-      }
-      
+    onGetLatLng = ([latLng, dados], results) => {
+        this.setState({ latLng, results })
+        try {
+            const rua = dados[1].long_name
+            const cidade = dados[3].long_name
+            const cep = dados[6].long_name
+            const bairro = dados[2].long_name
+            const numero = dados[0].long_name
+            const estado = dados[4].long_name
+            this.setState({ rua })
+            this.setState({ cidade })
+            this.setState({ cep })
+            this.setState({ bairro })
+            this.setState({ numero })
+            this.setState({ estado })
+
+        } catch (error) {
+            const rua = ''
+            const cidade = ''
+            const cep = ''
+            const bairro = ''
+            const numero = ''
+            const estado = ''
+            this.setState({ rua })
+            this.setState({ cidade })
+            this.setState({ cep })
+            this.setState({ bairro })
+            this.setState({ numero })
+            this.setState({ estado })
+        }
+    }
+
+
+
     showStep = () => {
-        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, complemento, cidade, uf, nome_banco, agencia, conta, digito, senha, confirmar_senha} = this.state;
+        const { step, nome, nome_empresa, email, telefone, cpf, cnpj, rg, orgao_emissor, complemento, cidade, rua, cep, bairro, numero, estado, senha, confirmar_senha } = this.state;
 
         if (step === 1)
             return (<Step1
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 nome={nome}
-                nome_empresa={nome_empresa}
                 email={email}
                 telefone={telefone}
             />);
@@ -194,21 +203,17 @@ export class Cadastro extends Component {
                 onGetLatLng={this.onGetLatLng}
                 complemento={complemento}
                 cidade={cidade}
-                uf={uf}
+                cep={cep}
+                rua={rua}
+                bairro={bairro}
+                numero={numero}
+                estado={estado}
+                nome_empresa={nome_empresa}
             />);
+
+    
 
         else if (step === 4)
-            return (<Step4
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                handleChange={this.handleChange}
-                nome_banco={nome_banco}
-                agencia={agencia}
-                conta={conta}
-                digito={digito}
-            />);
-
-        else if (step === 5)
             return (<Step5
                 addempresa={this.addempresa}
                 prevStep={this.prevStep}
@@ -217,8 +222,9 @@ export class Cadastro extends Component {
                 confirmar_senha={confirmar_senha}
             />);
 
-            else if (step === 6)
+        else if (step === 5)
             return (<Step6
+                redLogin={this.redLogin}
             />);
     }
     render() {
@@ -238,7 +244,7 @@ export class Cadastro extends Component {
                             <Link to={'/'}><img src={logo} alt="logo_engine" /></Link>
                         </div>
                     </div>
-                    <div className="render">    
+                    <div className="render">
                         {this.showStep()}
                     </div>
                 </section>

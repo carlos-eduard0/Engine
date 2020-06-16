@@ -3,6 +3,7 @@ import usePlacesAutocomplete from "use-places-autocomplete";
 import {
   geocodeByAddress,
   getLatLng,
+  geocodeByPlaceId,
 } from "react-places-autocomplete";
 import {
   Combobox,
@@ -54,8 +55,10 @@ const PlacesAutoComplete = ({ onGetLatLng }) => {
 
   const handleInput = (e) => {
     setValue(e.target.value);
+        
   };
 
+ 
   const handleSelect = async (val) => {
     clearSuggestions()
     const results = await geocodeByAddress(val);
@@ -66,13 +69,13 @@ const PlacesAutoComplete = ({ onGetLatLng }) => {
   };
   return (
     <Combobox onSelect={handleSelect} aria-labelledby="demo">
-      <ComboboxInput value={value} onChange={handleInput} disabled={!ready} className="inputEnd" />
-      <ComboboxPopover>
-        <ComboboxList>
+      <ComboboxInput value={value} onChange={handleInput} disabled={!ready} className="inputEnd"  />
+      <ComboboxPopover  >
+        <ComboboxList  >
 
           {status === "OK" &&
             data.map(({ id, description }) => (
-                <ComboboxOption key={id} value={description} style={{ paddingTop: 20, paddingBottom: 20 }} >
+                <ComboboxOption key={id} value={description} style={{ paddingTop: 20, paddingBottom: 20 }}  >
                   📍" <ComboboxOptionText />
                 </ComboboxOption>
             ))}

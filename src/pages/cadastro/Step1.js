@@ -7,10 +7,10 @@ class Step1 extends Component {
         this.props.nextStep();
     }
     render() {
-        const { nome, nome_empresa, email, telefone, handleChange } = this.props;
+        const { nome, email, telefone, handleChange } = this.props;
         return (
-            <div className="form"  >
-                <strong>Sobre o dono da empresa</strong>
+            <div className="form">
+                <strong>Dados Pessoais</strong>
                 <form action="submit" onSubmit={this.continue}>
                     <label htmlFor="nome">Nome Completo</label>
                     <input
@@ -19,14 +19,6 @@ class Step1 extends Component {
                         value={nome}
                         required
                         onChange={handleChange('nome')}
-                    />
-                    <label htmlFor="nome_empresa">Nome da Empresa</label>
-                    <input
-                        type="text"
-                        name="nome_empresa"
-                        value={nome_empresa}
-                        required
-                        onChange={handleChange('nome_empresa')}
                     />
                     <label htmlFor="email">E-mail</label>
                     <input
