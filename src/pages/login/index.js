@@ -27,7 +27,13 @@ function Login() {
         try{
             await api.post('/sessions', data)
             .then(response => {
-                cookies.set('id', response.data, {path:'/painel'});
+
+                if(response.data.message == 'logado'){
+                    cookies.set('id', response.data, {path:'/painel'});
+                } else {
+                    alert('usuário ou senha incorreta');
+                    return;
+                }
             })
             .then(setTimeout(function(){ 
                 history.push('/painel'); 
