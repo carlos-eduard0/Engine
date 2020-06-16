@@ -22,7 +22,7 @@ export default function Routes() {
         if(user){
             return true;
         } else {
-            return true;
+            return false;
         }
     }
 
@@ -44,7 +44,7 @@ export default function Routes() {
 
         <Router>
             <Route path="/" exact component={Main} />
-            <PrivateRoute path="/painel" component={Painel} />
+            <Route path="/painel" component={Painel} />
             <Route path='/cadastro' component={Cadastro} />
             <Route path='/login' component={Login} />
             <Route path='/redefinir/senha' component={RedefinirSenha} />
