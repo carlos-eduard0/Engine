@@ -12,6 +12,8 @@ import CodigoSenha from './pages/codigoSenha';
 
 const cookies = new Cookies();
 
+cookies.set('lang', 'pt-br', {path:'/'});
+
 const check = () => {
     var user = cookies.get('id');
 
