@@ -87,7 +87,7 @@ export class Cadastro extends Component {
         })
         try {
             if (res.data.message === 'cadastrado') {
-                cookies.set('id', res.data.id);
+                cookies.set('empresa', res.data.id);
                 this.nextStep()
             }
              if (res.data.message === 'Empresa ja cadastrada') {

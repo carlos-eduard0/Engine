@@ -47,7 +47,7 @@ class Step6 extends Component {
     e.preventDefault();
     const { data, uploadedFiles } = this.state;
     const cookies = new Cookies();
-    const id_empresa = cookies.get('id');
+    const id_empresa = cookies.get('empresa');
     
     api.post(`/empresaLogo/${id_empresa}`, data, {
       onUploadProgress: e => {
