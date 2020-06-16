@@ -59,6 +59,7 @@
     font-size: 20px;
     color: rgb(75, 75, 75);
 }
+/* ok */
 
 .footer-text{
     background-color: rgb(233, 233, 233);
@@ -78,6 +79,14 @@
 .flex-login #esqSenha{
     margin-top: 25px;
     color: #ffff;
+}
+/* ok */
+#btnloginr:disabled {
+    opacity: 0.5;
+}
+
+#btnloginr:disabled #prox {
+    display: none;
 }
 @media (min-width:1800px){
     .body-login{

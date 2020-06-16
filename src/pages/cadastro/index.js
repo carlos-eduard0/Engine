@@ -249,7 +249,7 @@ export class Cadastro extends Component {
                 loading={loading2}
                 redLogin={this.redLogin}
             />);
-    }//ok
+    }
     render() {
         return (
             <div className="body-cadastro">
