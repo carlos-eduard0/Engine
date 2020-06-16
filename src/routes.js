@@ -9,36 +9,32 @@ import Login from './pages/login';
 import RedefinirSenha from './pages/redefinirSenha';
 import CodigoSenha from './pages/codigoSenha';
 
-const check = () => {
-    var user = cookies.get('id');
-    const cookies = new Cookies();
-
-    if(user){
-        return true;
-    } else {
-        return false;
-    }
-}
-
-const PrivateRoute = ({ component: Component, ... rest}) => ( // Cria uma rota privada
-    <Route //Essa rota é uma rota normal, que renderiza um componente a ser informado dps...
-        {... rest}
-        render={props =>
-            check() ? ( //... a diferença é que, se auth.authenticated for verdadeiro, ou seja, se tiver um use logado nos cookis, ...
-
-                <Component {... props} /> // ... ele renderiza normal
-            ) : ( // Se não, volta para a pagina inicial
-                <Redirect to={{ pathname: "/", state: { from: props.location }}} />
-            )
-        }
-    />
-);
-
-
-
-
-
 export default function Routes() {
+    const check = () => {
+        var user = cookies.get('id');
+        const cookies = new Cookies();
+
+        if(user){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    const PrivateRoute = ({ component: Component, ... rest}) => ( 
+        <Route 
+            {... rest}
+            render={props =>
+                check() ? ( 
+
+                    <Component {... props} /> 
+                ) : ( 
+                    <Redirect to={{ pathname: "/", state: { from: props.location }}} />
+                )
+            }
+        />
+    );
+    
     return (
 
         <Router>
