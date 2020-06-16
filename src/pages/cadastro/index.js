@@ -6,7 +6,7 @@ import Step3 from './Step3';
 import Step4 from './step4';
 import Step5 from './step5';
 import Step6 from './step6';
-import logo from '../../img/logoEngine.png'
+import logo from '../../img/logo-branca.png'
 import HomeIcon from '@material-ui/icons/Home';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import { Link } from 'react-router-dom';
@@ -249,7 +249,7 @@ export class Cadastro extends Component {
                 loading={loading2}
                 redLogin={this.redLogin}
             />);
-    }
+    }//ok
     render() {
         return (
             <div className="body-cadastro">
@@ -264,7 +264,7 @@ export class Cadastro extends Component {
                             </nav>
                         </header>
                         <div className="imagem">
-                            <Link to={'/'}><img src={logo} alt="logo_engine" /></Link>
+                            <Link to={'/'}><img src={logo} style={{width:400, height:'auto'}} alt="logo_engine" /></Link>
                         </div>
                     </div>
                     <div className="render">
