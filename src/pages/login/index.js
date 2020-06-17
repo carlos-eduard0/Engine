@@ -14,6 +14,17 @@ function Login() {
     const [senha, setSenha] = useState('');
     const [loading, setLoading] = useState(false);
 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
     async function handleLogin(e) {
         e.preventDefault();
@@ -29,10 +40,14 @@ function Login() {
         if (response.data.message == 'logado') {
             cookies.set('id', response.data.empresa, { path: '/' });
             setTimeout(function () {
-                history.push('/painel');
-            }, 2000);
+                history.push('/painel/dash');
+            }, 1500);
+            setLoading(false)
         } else {
-            alert('usuário ou senha incorreta');
+             Toast.fire({
+                icon: 'error',
+                title: 'Usuário ou senha incorretos'
+            })
         }
 
     }
