@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Cookies from 'universal-cookie'; 
 // import auth from './services/auth'; 
 
@@ -43,12 +43,14 @@ export default function Routes() {
     return (
 
         <Router>
-            <Route path="/" exact component={Main} />
-            <PrivateRoute path="/painel" component={Painel} />
-            <Route path='/cadastro' component={Cadastro} />
-            <Route path='/login' component={Login} />
-            <Route path='/redefinir/senha' component={RedefinirSenha} />
-            <Route path='/codigo/senha/:token' component={CodigoSenha} />
+            <Switch>
+                <Route path="/" exact component={Main} />
+                <PrivateRoute path="/painel" component={Painel} />
+                <Route path='/cadastro' component={Cadastro} />
+                <Route path='/login' component={Login} />
+                <Route path='/redefinir/senha' component={RedefinirSenha} />
+                <Route path='/codigo/senha/:token' component={CodigoSenha} />
+            </Switch>
         </Router>
 
     )
