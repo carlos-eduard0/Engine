@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
 import './styles.css';
 import logobranca from '../../img/logo-branca.png';
 import { Link } from 'react-router-dom';
