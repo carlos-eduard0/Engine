@@ -24,24 +24,20 @@ function Login() {
             senha
         };
 
-        try{
-            await api.post('/sessions', data)
-            .then(response => {
+        await api.post('/sessions', data)
+        .then(response => {
 
-                if(response.data.message == 'logado'){
-                    await cookies.set('id', response.data, {path:'/painel'});
-                } else {
-                    alert('usuário ou senha incorreta');
-                    return;
-                }
-            })
-            .then(setTimeout(function(){ 
-                history.push('/painel'); 
-            }, 1500));
+            if(response.data.message == 'logado'){
+                await cookies.set('id', response.data, {path:'/painel'});
+            } else {
+                alert('usuário ou senha incorreta');
+                return;
+            }
+        })
+        .then(setTimeout(function(){ 
+            history.push('/painel'); 
+        }, 1500));
 
-        } catch (err){
-            alert('usuário ou senha incorreta');
-        }
     }
 
     return (
