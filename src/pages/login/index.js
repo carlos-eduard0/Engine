@@ -48,6 +48,7 @@ function Login() {
                 icon: 'error',
                 title: 'Usuário ou senha incorretos'
             })
+            setLoading(false)
         }
 
     }
