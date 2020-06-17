@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import usePlacesAutocomplete from "use-places-autocomplete";
+import logoGoogleIcon from "../../img/google.png";
 import {
   geocodeByAddress,
   getLatLng,
@@ -75,8 +76,8 @@ const PlacesAutoComplete = ({ onGetLatLng }) => {
 
           {status === "OK" &&
             data.map(({ id, description }) => (
-                <ComboboxOption key={id} value={description} style={{ paddingTop: 20, paddingBottom: 20 }}  >
-                  📍" <ComboboxOptionText />
+                <ComboboxOption key={id} value={description} style={{ paddingTop: 10, paddingBottom: 10 }}  >
+                  📍<ComboboxOptionText />
                 </ComboboxOption>
             ))}
 
@@ -84,7 +85,7 @@ const PlacesAutoComplete = ({ onGetLatLng }) => {
       </ComboboxPopover>
       <li className="logoGoogle">
         <img
-          src="https://developers.google.com/maps/documentation/images/powered_by_google_on_white.png"
+          src={logoGoogleIcon}
           alt="Powered by Google"
         />
       </li>
