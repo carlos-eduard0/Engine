@@ -26,26 +26,25 @@ export default function Routes() {
         }
     }
 
-    const PrivateRoute = ({ component: Component, ... rest}) => ( 
-        <Route 
-            {... rest}
-            render={props =>
-                check() ? ( 
+    // const PrivateRoute = ({ component: Component, ... rest}) => ( 
+    //     <Route 
+    //         {... rest}
+    //         render={props =>
+    //             check() ? ( 
 
-                    <Component {... props} /> 
-                ) : ( 
-                    <Redirect to={{ pathname: "/", state: { from: props.location }}} />
-                )
-            }
-        />
-    );
+    //                 <Component {... props} /> 
+    //             ) : ( 
+    //                 <Redirect to={{ pathname: "/", state: { from: props.location }}} />
+    //             )
+    //         }
+    //     />
+    // );
     
     return (
 
         <Router>
             <Switch>
                 <Route path="/" exact component={Main} />
-                <PrivateRoute path="/painel" component={Painel} />
                 <Route path='/cadastro' component={Cadastro} />
                 <Route path='/login' component={Login} />
                 <Route path='/redefinir/senha' component={RedefinirSenha} />
