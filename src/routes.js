@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import Cookies from 'universal-cookie'; 
-// import auth from './services/auth'; 
+import Cookies from 'universal-cookie';  
 
 import Main from './pages/main';
 import Painel from './pages/painel';
@@ -44,7 +43,7 @@ export default function Routes() {
 
         <Router>
             <Switch>
-                <Route path="/" exact component={Main} />
+                <Route exact path="/"  component={Main} />
                 <PrivateRoute path="/painel" component={Painel} />
                 <Route path="/cadastro" component={Cadastro} />
                 <Route path="/login" component={Login} />
