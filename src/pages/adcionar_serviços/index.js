@@ -39,7 +39,7 @@ const Modal = ({ id = 'modal', onClose = () => {}, children }) => {
                 }
             });
             alert("Serviço cadastrado");
-            onClose();
+            window.location.reload();
         }catch (err){
             alert("erro no cadastro", err)
         };
