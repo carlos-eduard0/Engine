@@ -7,58 +7,58 @@ import './styles.css';
 import logobranca from '../../img/logo-branca.png';
 import { Link } from 'react-router-dom';
 function Login() {
-    // const history = useHistory();
-    // const cookies = new Cookies();
+    const history = useHistory();
+    const cookies = new Cookies();
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    // const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    // const Toast = Swal.mixin({
-    //     toast: true,
-    //     position: 'top-end',
-    //     showConfirmButton: false,
-    //     timer: 3000,
-    //     timerProgressBar: true,
-    //     onOpen: (toast) => {
-    //         toast.addEventListener('mouseenter', Swal.stopTimer)
-    //         toast.addEventListener('mouseleave', Swal.resumeTimer)
-    //     }
-    // })
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
 
-    // async function handleLogin(e) {
-    //     e.preventDefault();
-    //     setLoading(true)
+    async function handleLogin(e) {
+        e.preventDefault();
+        setLoading(true)
 
-    //     const data = {
-    //         email,
-    //         senha
-    //     };
+        const data = {
+            email,
+            senha
+        };
 
-    //     const response = await api.post('/sessions', data);
+        const response = await api.post('/sessions', data);
 
-    //     if (response.data.message === 'logado') {
-    //        await cookies.set('id', response.data.empresa, { path: '/' });
-    //         setTimeout(function () {
-    //             history.push('/painel');
-    //             setLoading(false)
-    //         }, 2000);
-    //     } else {
-    //          Toast.fire({
-    //             icon: 'error',
-    //             title: 'Usuário ou senha incorretos'
-    //         })
-    //         setLoading(false)
-    //     }
+        if (response.data.message === 'logado') {
+           await cookies.set('id', response.data.empresa, { path: '/' });
+            setTimeout(function () {
+                history.push('/painel');
+                setLoading(false)
+            }, 2000);
+        } else {
+             Toast.fire({
+                icon: 'error',
+                title: 'Usuário ou senha incorretos'
+            })
+            setLoading(false)
+        }
 
-    // }
+    }
 
     return (
         <div className="body-login">
             <div className="flex-login">
                 <Link to={'/'}><img src={logobranca} alt="" /></Link>
                 <div className="form-login">
-                    <form> 
+                    <form onSubmit={handleLogin}>
                         <strong>Login</strong>
                         <label htmlFor="email">E-mail</label>
                         <input type="email" value={email} onChange={e => setEmail(e.target.value)} id="email" required />
@@ -66,7 +66,7 @@ function Login() {
                         <label htmlFor="senha">Senha</label>
                         <input type="password" value={senha} onChange={e => setSenha(e.target.value)} id="senha" required />
 
-                        <button type="submit" id="btnloginr" > <span id="prox">Login</span></button>
+                        <button type="submit" id="btnloginr" disabled={loading}> {loading && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize: 16 }} />}<span id="prox">Login</span></button>
                     </form>
                 </div>
                 <div className="footer-text">
