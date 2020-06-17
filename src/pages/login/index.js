@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 import api from '../../services/api';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import './styles.css';
 import logobranca from '../../img/logo-branca.png';
@@ -15,7 +15,7 @@ function Login() {
     const [loading, setLoading] = useState(false);
 
 
-    async function handleLogin(e){
+    async function handleLogin(e) {
         e.preventDefault();
         setLoading(true)
 
@@ -26,10 +26,10 @@ function Login() {
 
         const response = await api.post('/sessions', data);
 
-        if(response.data.message == 'logado'){
-            await cookies.set('id', response.data.empresa, {path:'/'});
-            setTimeout(function(){ 
-                history.push('/painel'); 
+        if (response.data.message == 'logado') {
+            cookies.set('id', response.data.empresa, { path: '/' });
+            setTimeout(function () {
+                history.push('/painel');
             }, 2000);
         } else {
             alert('usuário ou senha incorreta');
@@ -50,7 +50,7 @@ function Login() {
                         <label htmlFor="senha">Senha</label>
                         <input type="password" value={senha} onChange={e => setSenha(e.target.value)} id="senha" required />
 
-                        <button type="submit" id="btnloginr" disabled={loading}> {loading && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize:16 }}/>}<span id="prox">Login</span></button>
+                        <button type="submit" id="btnloginr" disabled={loading}> {loading && <i className="fa fa-refresh fa-spin" style={{ paddingRight: "5px", fontSize: 16 }} />}<span id="prox">Login</span></button>
                     </form>
                 </div>
                 <div className="footer-text">
