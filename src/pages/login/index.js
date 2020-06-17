@@ -27,7 +27,7 @@ function Login() {
         const response = await api.post('/sessions', data);
 
         if(response.data.message == 'logado'){
-            await cookies.set('id', response.data.id, {path:'/painel'});
+            await cookies.set('id', response.data.empresa, {path:'/painel'});
             setTimeout(function(){ 
                 history.push('/painel'); 
             }, 2000);
