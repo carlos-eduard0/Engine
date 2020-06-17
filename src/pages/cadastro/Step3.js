@@ -20,10 +20,10 @@ class Step3 extends Component {
                 <strong>Dados da empresa</strong>
                 <form action="submit" onSubmit={this.continue}>
 
-                    <label>Endereço</label>
+                    <label>Estabelecimento</label>
                     <BoxMaps onGetLatLng={onGetLatLng}></BoxMaps>
 
-                    <label htmlFor="">Nome da empresa</label>
+                    <label htmlFor="">Nome</label>
                     <input
                         type="text"
                         name="nomeEmpresa"
