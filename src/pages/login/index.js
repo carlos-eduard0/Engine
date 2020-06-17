@@ -37,8 +37,8 @@ function Login() {
 
         const response = await api.post('/sessions', data);
 
-        if (response.data.message == 'logado') {
-            cookies.set('id', response.data.empresa, { path: '/' });
+        if (response.data.message === 'logado') {
+           await cookies.set('id', response.data.empresa, { path: '/' });
             setTimeout(function () {
                 history.push('/painel/dash');
                 setLoading(false)
