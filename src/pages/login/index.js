@@ -40,7 +40,7 @@ function Login() {
         if (response.data.message === 'logado') {
            await cookies.set('id', response.data.empresa, { path: '/' });
             setTimeout(function () {
-                history.push('/painel');
+                history.push('/painel/dash');
                 setLoading(false)
             }, 2000);
         } else {
