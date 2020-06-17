@@ -41,6 +41,7 @@ export class Cadastro extends Component {
         bairro: '',
         cep: '',
         numero: '',
+        //co
 
 
         //step 5
