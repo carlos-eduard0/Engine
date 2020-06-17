@@ -41,8 +41,8 @@ function Login() {
             cookies.set('id', response.data.empresa, { path: '/' });
             setTimeout(function () {
                 history.push('/painel/dash');
+                setLoading(false)
             }, 2000);
-            setLoading(false)
         } else {
              Toast.fire({
                 icon: 'error',
