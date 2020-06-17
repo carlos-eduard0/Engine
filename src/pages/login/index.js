@@ -30,7 +30,7 @@ function Login() {
             await cookies.set('id', response.data, {path:'/painel'});
             setTimeout(function(){ 
                 history.push('/painel'); 
-            }, 1500);
+            }, 2000);
         } else {
             alert('usuário ou senha incorreta');
         }
