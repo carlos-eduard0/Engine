@@ -29,7 +29,7 @@ function Login() {
             .then(response => {
 
                 if(response.data.message == 'logado'){
-                    cookies.set('id', response.data, {path:'/painel'});
+                    await cookies.set('id', response.data, {path:'/painel'});
                 } else {
                     alert('usuário ou senha incorreta');
                     return;
