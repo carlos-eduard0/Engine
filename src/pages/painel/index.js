@@ -17,7 +17,7 @@ function Painel() {
     const history = useHistory();
 
     async function handleUserLogout(){
-        cookies.remove('id', {path:'/painel'});
+        cookies.remove('id', {path:'/'});
         history.push('/');    
     }
 
