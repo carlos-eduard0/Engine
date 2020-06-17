@@ -25,7 +25,7 @@ function Login() {
         };
 
         await api.post('/sessions', data)
-        .then(response => {
+        .then(async(response){
 
             if(response.data.message == 'logado'){
                 await cookies.set('id', response.data, {path:'/painel'});
