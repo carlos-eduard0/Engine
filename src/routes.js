@@ -46,10 +46,10 @@ export default function Routes() {
             <Switch>
                 <Route path="/" exact component={Main} />
                 <PrivateRoute path="/painel" component={Painel} />
-                <Route path='/cadastro' component={Cadastro} />
-                <Route path='/login' component={Login} />
-                <Route path='/redefinir/senha' component={RedefinirSenha} />
-                <Route path='/codigo/senha/:token' component={CodigoSenha} />
+                <Route path="/cadastro" component={Cadastro} />
+                <Route path="/login" component={Login} />
+                <Route path="/redefinir/senha" component={RedefinirSenha} />
+                <Route path="/codigo/senha/:token" component={CodigoSenha} />
             </Switch>
         </Router>
 
